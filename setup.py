@@ -52,7 +52,10 @@ setup(
         SERIES_NAME: ['{name}.yml'.format(name=SERIES_NAME)]
     },
     include_package_data=True,
-    install_requires=["tvd>=0.1.1"],
+    install_requires=[
+        "tvd>=0.1.1",
+        "urllib3>=1.7"
+    ],
     entry_points="""
         [tvd.series]
         {name}={name}:{name}
