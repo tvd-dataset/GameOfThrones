@@ -48,6 +48,9 @@ setup(
     author="Herve Bredin",
     author_email="bredin@limsi.fr",
     packages=find_packages(),
+    package_data={
+        SERIES_NAME: ['{name}.yml'.format(name=SERIES_NAME)]
+    },
     include_package_data=True,
     install_requires=["tvd>=0.1.1"],
     entry_points="""
