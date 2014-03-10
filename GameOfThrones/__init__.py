@@ -34,7 +34,7 @@ del get_versions
 from tvd.series.plugin import SeriesPlugin
 import re
 import urllib3
-from tvd.common.graph import TFloating, TStart, TEnd, AnnotationGraph
+from tvd import TFloating, TStart, TEnd, AnnotationGraph
 
 
 class GameOfThrones(SeriesPlugin):
@@ -68,34 +68,42 @@ class GameOfThrones(SeriesPlugin):
         for w in word:
             if start_scene == 1:
                 sp = sp + " " + str(w)
-            if (re.match("<h2><span", w) or re.match("NewPP", w)) and (nb_scene > 0):
+            if (re.match("<h2><span", w) or re.match("NewPP", w)) \
+               and (nb_scene > 0):
                 usp = sp.decode("utf-8")
                 sp = usp.encode("ascii", "ignore")
                 sp = re.sub(re.compile('<i>', re.I), "", sp)
                 sp = re.sub(re.compile('</i>', re.I), "", sp)
-                sp = re.sub(re.compile('<a href=\"/wiki/\S{1,15}(_\(*\S{1,15}\)*)*" title=\"\S{1,15}(\s\(*\S{1,15}\)*)*\">',re.I), "", sp)
-                sp = re.sub(re.compile('<a href=\"/wiki/\S{1,15}(_\(*\S{1,15}\)*)*" title=\"\S{1,15}(\s\(*\S{1,15}\)*)*\" class=\"mw-redirect\">',re.I), "", sp)
-                sp = re.sub(re.compile('<figure class=\"(.*)</figure>',re.I), "", sp)
-                sp = re.sub(re.compile('</a>',re.I), "", sp)
-                sp = re.sub(re.compile('<!-- NewPP',re.I), "", sp)
-                sp = re.sub(re.compile('<p>',re.I), "", sp)
-                sp = re.sub(re.compile('</p>',re.I), "", sp)
-                sp = re.sub(re.compile('<h2><span',re.I), "", sp)
+                sp = re.sub(re.compile(
+                    (
+                        '<a href=\"/wiki/\S{1,15}(_\(*\S{1,15}\)*)*" '
+                        'title=\"\S{1,15}(\s\(*\S{1,15}\)*)*\">'
+                    ), re.I), "", sp)
+                sp = re.sub(re.compile(
+                    (
+                        '<a href=\"/wiki/\S{1,15}(_\(*\S{1,15}\)*)*" '
+                        'title=\"\S{1,15}(\s\(*\S{1,15}\)*)*\" '
+                        'class=\"mw-redirect\">'
+                    ), re.I), "", sp)
+                sp = re.sub(re.compile(
+                    (
+                        '<figure class=\"(.*)</figure>'
+                    ), re.I), "", sp)
+                sp = re.sub(re.compile('</a>', re.I), "", sp)
+                sp = re.sub(re.compile('<!-- NewPP', re.I), "", sp)
+                sp = re.sub(re.compile('<p>', re.I), "", sp)
+                sp = re.sub(re.compile('</p>', re.I), "", sp)
+                sp = re.sub(re.compile('<h2><span', re.I), "", sp)
 
                 # add /empty/ edge between previous and next annotations
-                t1 = TFloating()
-                G.add_annotation(t2, t1, {})
+                t1 = t2
+                t2 = TFloating()
+                G.add_annotation(t1, t2, {})
 
                 # add next annotation
                 t1 = t2
                 t2 = TFloating()
-                G.add_annotation(
-                    t1, t2,
-                    {
-                        'scene': "Scene_"+str(nb_scene),
-                        'speech': sp
-                    }
-                )
+                G.add_annotation(t1, t2, {'scene': sp})
 
                 sp = ""
                 start_scene = 0
@@ -129,11 +137,15 @@ class GameOfThrones(SeriesPlugin):
             if start_scene == 1 and re.match("</div>", w):
                 start_scene = 0
             if start_scene == 1:
-                nom = (re.search('/>[A-Z][a-z]{1,15} :', w) or (re.search('/>[A-Z]{1,15}:', w)))
+                nom = (
+                    re.search('/>[A-Z][a-z]{1,15} :', w) or
+                    (re.search('/>[A-Z]{1,15}:', w)))
                 if nom:
                     w = "<START>" + nom.group(0) + ":"
                 else:
-                    nom = (re.search('/>[A-Z][a-z]{1,15}', w) or (re.search('/>[A-Z]{1,15}', w)))
+                    nom = (
+                        re.search('/>[A-Z][a-z]{1,15}', w) or
+                        (re.search('/>[A-Z]{1,15}', w)))
                     if nom:
                         w = "<START>" + nom.group(0)
                 sp = sp + " " + str(w)
@@ -144,8 +156,15 @@ class GameOfThrones(SeriesPlugin):
         sp = re.sub(re.compile('<br <START>/>', re.I), "####", sp)
         sp = re.sub(re.compile('::', re.I), ":", sp)
         sp = re.sub(re.compile('&quot;', re.I), "", sp)
-        sp = re.sub(re.compile('\[([a-zA-Z\'\’,\-]{1,50})(\s[0-9a-zA-Z\’\'’“”\(\),;:\.\?!\-\–#{4}]{1,50})*\.*\]', re.UNICODE), "", sp)
-        sp = re.sub(re.compile('\[Blackout \/ Opening credits\]', re.UNICODE), "", sp)
+        sp = re.sub(re.compile(
+            (
+                '\[([a-zA-Z\'\’,\-]{1,50})'
+                '(\s[0-9a-zA-Z\’\'’“”\(\),;:\.\?!\-\–#{4}]{1,50})*\.*\]'
+            ), re.UNICODE), "", sp)
+        sp = re.sub(re.compile(
+            (
+                '\[Blackout \/ Opening credits\]'
+            ), re.UNICODE), "", sp)
         sp = re.sub(re.compile('\/ BLACKOUT', re.UNICODE), "", sp)
 
         word = re.split('####', sp)
@@ -153,13 +172,18 @@ class GameOfThrones(SeriesPlugin):
         for w in word:
             if ok == 1:
                 if re.match("(.*)</div>(.*)", w):
-                    w = re.sub(re.compile('</div>(.*)</table>', re.UNICODE), "", w)
+                    w = re.sub(re.compile(
+                        (
+                            '</div>(.*)</table>'
+                        ), re.UNICODE), "", w)
 
                 if re.match("(.*): (.*)", w):
                     ligne = re.split(': ', w)
                 elif re.match("[A-Z][a-z]{1,15}(.*) : (.*)", w):
                     ligne = re.split(' : ', w)
-                elif re.match("[A-Z]{1,15}\s\(\w{1,15}(\s\w{1,15})*\.*\)(.*)", w):
+                elif re.match(
+                    "[A-Z]{1,15}\s\(\w{1,15}(\s\w{1,15})*\.*\)(.*)", w
+                ):
                     ligne = re.split('\) ', w)
                     ligne[0] = ligne[0] + ")"
                 elif re.match("[A-Z]{1,15}\s(.*)", w):
@@ -171,8 +195,9 @@ class GameOfThrones(SeriesPlugin):
                 ligne1 = uligne1.encode("ascii", "ignore")
 
                 # add /empty/ edge between previous and next annotations
-                t1 = TFloating()
-                G.add_annotation(t2, t1, {})
+                t1 = t2
+                t2 = TFloating()
+                G.add_annotation(t1, t2, {})
 
                 # add next annotation
                 t1 = t2
@@ -185,13 +210,19 @@ class GameOfThrones(SeriesPlugin):
                     }
                 )
 
-            if ok == 0 and (re.match("[a-zA-Z]{1,15}(\s[a-zA-Z]{1,15}){1,2} : (.*)", w) or re.match("[A-Z]{1,15}(\s[A-Z]{1,15})?: (.*)", w)):
+            if ok == 0 and (
+                re.match("[a-zA-Z]{1,15}(\s[a-zA-Z]{1,15}){1,2} : (.*)", w) or
+                re.match("[A-Z]{1,15}(\s[A-Z]{1,15})?: (.*)", w)
+            ):
                 ok = 1
                 if re.match("[A-Z]{1,15}: (.*)", w):
                     ligne = re.split(': ', w)
                 elif re.match("[A-Z][a-z]{1,15}(.*) : (.*)", w):
                     ligne = re.split(' : ', w)
-                elif re.match("[A-Z]{1,15}\s\((to|in\s)+(\s+[a-zA-Z]{1,15}){1,5}\)(.*)", w):
+                elif re.match(
+                    "[A-Z]{1,15}\s\((to|in\s)+(\s+[a-zA-Z]{1,15}){1,5}\)(.*)",
+                    w
+                ):
                     ligne = re.split('\) ', w)
                     ligne[0] = ligne[0] + ")"
                 elif re.match("[A-Z]{1,15}\s(.*)", w):
@@ -205,8 +236,9 @@ class GameOfThrones(SeriesPlugin):
                 ligne1 = uligne1.encode("ascii", "ignore")
 
                 # add /empty/ edge between previous and next annotations
-                t1 = TFloating()
-                G.add_annotation(t2, t1, {})
+                t1 = t2
+                t2 = TFloating()
+                G.add_annotation(t1, t2, {})
 
                 # add next annotation
                 t1 = t2
