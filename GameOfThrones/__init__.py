@@ -34,7 +34,7 @@ del get_versions
 from tvd.series.plugin import SeriesPlugin
 import re
 import urllib3
-from tvd.common.graph import T, TStart, TEnd, AnnotationGraph
+from tvd.common.graph import TFloating, TStart, TEnd, AnnotationGraph
 
 
 class GameOfThrones(SeriesPlugin):
@@ -61,8 +61,8 @@ class GameOfThrones(SeriesPlugin):
         nb_scene = 0
         word = r.data.split()
 
-        G = AnnotationGraph()
-        t2 = TStart(episode=episode)
+        G = AnnotationGraph(episode=episode)
+        t2 = TStart()
         sp = ""
 
         for w in word:
@@ -83,13 +83,19 @@ class GameOfThrones(SeriesPlugin):
                 sp = re.sub(re.compile('<h2><span',re.I), "", sp)
 
                 # add /empty/ edge between previous and next annotations
-                t1 = T(episode=episode)
-                G.add_edge(t2, t1)
+                t1 = TFloating()
+                G.add_annotation(t2, t1, {})
 
                 # add next annotation
                 t1 = t2
-                t2 = T(episode=episode)
-                G.add_edge(t1, t2, scene="Scene_"+str(nb_scene), speech=sp)
+                t2 = TFloating()
+                G.add_annotation(
+                    t1, t2,
+                    {
+                        'scene': "Scene_"+str(nb_scene),
+                        'speech': sp
+                    }
+                )
 
                 sp = ""
                 start_scene = 0
@@ -101,8 +107,8 @@ class GameOfThrones(SeriesPlugin):
 
         # add /empty/ edge between previous annotation and episode end
         t1 = t2
-        t2 = TEnd(episode=episode)
-        G.add_edge(t1, t2)
+        t2 = TEnd()
+        G.add_annotation(t1, t2, {})
 
         return G
 
@@ -115,7 +121,7 @@ class GameOfThrones(SeriesPlugin):
         word = r.data.split()
 
         G = AnnotationGraph()
-        t2 = TStart(episode=episode)
+        t2 = TStart()
 
         sp = ""
 
@@ -164,16 +170,20 @@ class GameOfThrones(SeriesPlugin):
                 uligne1 = ligne[1].decode("utf-8")
                 ligne1 = uligne1.encode("ascii", "ignore")
 
-
                 # add /empty/ edge between previous and next annotations
-                t1 = T(episode=episode)
-                G.add_edge(t2, t1)
+                t1 = TFloating()
+                G.add_annotation(t2, t1, {})
 
                 # add next annotation
                 t1 = t2
-                t2 = T(episode=episode)
-                G.add_edge(t1, t2, spk=ligne0, speech=ligne1)
-
+                t2 = TFloating()
+                G.add_annotation(
+                    t1, t2,
+                    {
+                        'speaker': ligne0,
+                        'speech': ligne1
+                    }
+                )
 
             if ok == 0 and (re.match("[a-zA-Z]{1,15}(\s[a-zA-Z]{1,15}){1,2} : (.*)", w) or re.match("[A-Z]{1,15}(\s[A-Z]{1,15})?: (.*)", w)):
                 ok = 1
@@ -195,17 +205,23 @@ class GameOfThrones(SeriesPlugin):
                 ligne1 = uligne1.encode("ascii", "ignore")
 
                 # add /empty/ edge between previous and next annotations
-                t1 = T(episode=episode)
-                G.add_edge(t2, t1)
+                t1 = TFloating()
+                G.add_annotation(t2, t1, {})
 
                 # add next annotation
                 t1 = t2
-                t2 = T(episode=episode)
-                G.add_edge(t1, t2, spk=ligne0, speech=ligne1)
+                t2 = TFloating()
+                G.add_annotation(
+                    t1, t2,
+                    {
+                        'speaker': ligne0,
+                        'speech': ligne1
+                    }
+                )
 
         # add /empty/ edge between previous annotation and episode end
         t1 = t2
-        t2 = TEnd(episode=episode)
-        G.add_edge(t1, t2)
+        t2 = TEnd()
+        G.add_annotation(t1, t2, {})
 
         return G
