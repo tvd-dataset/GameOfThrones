@@ -58,18 +58,29 @@ class GameOfThrones(SeriesPlugin):
         r = http.request('GET', url)
         soup = BeautifulSoup(r.data)
         h2 = soup.find_all('h2')
+        sp = ""
+        i = 0
+        outline = {}
+
+
+        for element in h2[0].next_elements:
+            if element.name == 'p':
+                if outline.get(i) == "----":
+                    sp = element.text
+                else :
+                    sp = outline.get(i) + " " + element.text
+                outline.update({i:sp})
+            if element.name == 'h2':
+                i = i + 1
+                sp = "----"
+                outline.update({i:sp})
+
 
         G = AnnotationGraph(episode=episode)
         t2 = TStart()
-        sp = ""
 
-        i = 0
-        scene = 0
-        for element in h2[i].next_elements:
-            if element.name == "p":
-                sp = sp + " " + element.text
-            if element.name == "h2":
-
+        i = 1
+        while outline.get(i):
             # add /empty/ edge between previous and next annotations
             t1 = t2
             t2 = TFloating()
@@ -78,9 +89,9 @@ class GameOfThrones(SeriesPlugin):
             # add next annotation
             t1 = t2
             t2 = TFloating()
-            G.add_annotation(t1, t2, {'scene': sp})
+            G.add_annotation(t1, t2, {'scene': outline.get(i)})
 
-            sp = ""
+            i = i + 1
 
         # add /empty/ edge between previous annotation and episode end
         t1 = t2
