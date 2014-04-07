@@ -1,8 +1,9 @@
 #
 # The MIT License (MIT)
 #
-# Copyright (c) 2013-2014 Hervé BREDIN (http://herve.niderb.fr/)
-# Copyright (c) 2013-2014 Camille GUINAUDEAU
+# Copyright (c) 2013-2014 CNRS
+# - Camille GUINAUDEAU
+# - Hervé BREDIN (http://herve.niderb.fr/)
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -30,7 +31,7 @@ name: "Game of Thrones"
 language: "en"
 
 # number of episodes per season
-episodes: [10]
+episodes: [10, 10, 10]
 
 # resources that can be downloaded from the web
 www:
