@@ -4,8 +4,9 @@
 #
 # The MIT License (MIT)
 #
-# Copyright (c) 2013-2014 Camille GUINAUDEAU
-# Copyright (c) 2013-2014 Hervé BREDIN (http://herve.niderb.fr/)
+# Copyright (c) 2013-2014 CNRS
+# - Camille GUINAUDEAU
+# - Hervé BREDIN (http://herve.niderb.fr/)
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -41,10 +42,13 @@ AUTHOR_NAME = 'Camille Guinaudeau'
 AUTHOR_EMAIL = 'guinaudeau@limsi.fr'
 
 # TVD compatibility version
-REQUIRES_TVD = 'tvd>=0.2.1'
+REQUIRES_TVD = 'tvd>=0.3'
 
 # Additional package dependency
-REQUIRES_OTHER = ['beautifulsoup4>=4.3.2', 'urllib3>=1.8']
+REQUIRES_OTHER = [
+    'beautifulsoup4>=4.3.2',
+    'urllib3>=1.8'
+]
 
 # --- DO NOT MODIFY ANYTHING AFTER THIS LINE ---
 # --- UNLESS YOU KNOW WHAT YOU ARE DOING :-) ---
