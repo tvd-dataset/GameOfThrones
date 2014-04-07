@@ -164,7 +164,8 @@ class GameOfThrones(Plugin):
             name = line.rstrip('\n\r').split('\t')
             mapping.update({name[0]: name[1]})
 
-        #print(mapping)
+        f.close()
+
         http = urllib3.PoolManager()
         r = http.request('GET', url)
         soup = BeautifulSoup(r.data)
