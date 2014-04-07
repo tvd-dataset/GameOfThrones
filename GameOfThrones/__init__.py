@@ -4,8 +4,9 @@
 #
 # The MIT License (MIT)
 #
-# Copyright (c) 2013 Camille GUINAUDEAU
-# Copyright (c) 2013 Hervé BREDIN (http://herve.niderb.fr/)
+# Copyright (c) 2013-2014 CNRS
+# - Camille GUINAUDEAU
+# - Hervé BREDIN (http://herve.niderb.fr/)
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
