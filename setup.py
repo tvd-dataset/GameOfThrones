@@ -41,10 +41,10 @@ AUTHOR_NAME = 'Camille Guinaudeau'
 AUTHOR_EMAIL = 'guinaudeau@limsi.fr'
 
 # TVD compatibility version
-REQUIRES_TVD = 'tvd>=0.1.7'
+REQUIRES_TVD = 'tvd>=0.2.1'
 
 # Additional package dependency
-REQUIRES_OTHER = []
+REQUIRES_OTHER = ['beautifulsoup4>=4.3.2', 'urllib3>=1.8']
 
 # --- DO NOT MODIFY ANYTHING AFTER THIS LINE ---
 # --- UNLESS YOU KNOW WHAT YOU ARE DOING :-) ---
