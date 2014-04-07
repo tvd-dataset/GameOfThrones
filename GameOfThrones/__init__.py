@@ -34,6 +34,7 @@ del get_versions
 from tvd.series.plugin import SeriesPlugin
 import re
 import urllib3
+from bs4 import BeautifulSoup
 from tvd import TFloating, TStart, TEnd, AnnotationGraph
 
 
