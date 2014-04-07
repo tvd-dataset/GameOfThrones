@@ -36,7 +36,7 @@ import re
 import urllib3
 from bs4 import BeautifulSoup
 from tvd import TFloating, TStart, TEnd, AnnotationGraph
-
+from pkg_resources import resource_filename
 
 class GameOfThrones(Plugin):
 
@@ -156,7 +156,15 @@ class GameOfThrones(Plugin):
         return G
 
     def manual_transcript(self, url=None, episode=None, **kwargs):
+        pathToMappingFile = resource_filename(self.__class__.name__, 'data/mapping.txt')
+        mapping = {}
+        f = open(pathToMappingFile, 'r')
 
+        for line in f:
+            name = line.rstrip('\n\r').split('\t')
+            mapping.update({name[0]: name[1]})
+
+        #print(mapping)
         http = urllib3.PoolManager()
         r = http.request('GET', url)
         soup = BeautifulSoup(r.data)
@@ -174,31 +182,67 @@ class GameOfThrones(Plugin):
         transcription = 0
         for i in range(0,len(transcript.contents)):
             string = unicode(transcript.contents[i])
-            if re.match("(.*) : (.*)", string):
-                ligne = re.split(' : ', transcript.contents[i])
+            if not re.match("\[(.*)\]", string):
+                if re.match("(.*) : (.*)", string) and not re.match("(.*) by : (.*)", string):
+                    ligne = re.split(' : ', transcript.contents[i])
 
-                # add /empty/ edge between previous and next annotations
-                t1 = t2
-                t2 = TFloating()
-                G.add_annotation(t1, t2, {})
+                    # add /empty/ edge between previous and next annotations
+                    t1 = t2
+                    t2 = TFloating()
+                    G.add_annotation(t1, t2, {})
 
-                # add next annotation
-                t1 = t2
-                t2 = TFloating()
-                G.add_annotation(t1, t2, {'speaker': ligne[0], 'speech': ligne[1]})
+                    # add next annotation
+                    t1 = t2
+                    t2 = TFloating()
 
-            elif re.match("(.*): (.*)", string) and not re.match("Credit: (.*)", string):
-                ligne = re.split(': ', transcript.contents[i])
+                    spk = ligne[0].lower().replace(' ', '_')
 
-                # add /empty/ edge between previous and next annotations
-                t1 = t2
-                t2 = TFloating()
-                G.add_annotation(t1, t2, {})
+                    if re.match("(.*)_\(|\[(.*)\)|\]", spk):
+                        match = re.match("(.*)_\(|\[(.*)\)|\]", spk)
+                        spk = match.group(1)
+                    if spk in mapping:
+                        spk = mapping.get(spk)
 
-                # add next annotation
-                t1 = t2
-                t2 = TFloating()
-                G.add_annotation(t1, t2, {'speaker': ligne[0], 'speech': ligne[1]})
+                    if re.match("(.*)/(.*)", spk):
+                        spks = spk.split('/')
+                        if spks[0] in mapping:
+                            spk = mapping.get(spks[0])
+                            G.add_annotation(t1, t2, {'speaker': spk, 'speech': ligne[1]})
+                        if spks[1] in mapping:
+                            spk = mapping.get(spks[1])
+                            G.add_annotation(t1, t2, {'speaker': spk, 'speech': ligne[1]})
+                    else:
+                        G.add_annotation(t1, t2, {'speaker': spk, 'speech': ligne[1]})
+
+                elif re.match("(.*): (.*)", string) and not re.match("Credit: (.*)", string) and not re.match("(.*) by: (.*)", string):
+                    ligne = re.split(': ', transcript.contents[i])
+
+                    # add /empty/ edge between previous and next annotations
+                    t1 = t2
+                    t2 = TFloating()
+                    G.add_annotation(t1, t2, {})
+
+                    # add next annotation
+                    t1 = t2
+                    t2 = TFloating()
+                    spk = ligne[0].lower().replace(' ', '_')
+
+                    if re.match("(.*)_\(|\[(.*)\)|\]", spk):
+                        match = re.match("(.*)_\(|\[(.*)\)|\]", spk)
+                        spk = match.group(1)
+                    if spk in mapping:
+                        spk = mapping.get(spk)
+                    
+                    if re.match("(.*)/(.*)", spk):
+                        spks = spk.split('/')
+                        if spks[0] in mapping:
+                            spk = mapping.get(spks[0])
+                            G.add_annotation(t1, t2, {'speaker': spk, 'speech': ligne[1]})
+                        if spks[1] in mapping:
+                            spk = mapping.get(spks[1])
+                            G.add_annotation(t1, t2, {'speaker': spk, 'speech': ligne[1]})
+                    else:
+                        G.add_annotation(t1, t2, {'speaker': spk, 'speech': ligne[1]})
 
         # add /empty/ edge between previous annotation and episode end
         t1 = t2
