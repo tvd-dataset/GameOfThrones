@@ -31,14 +31,14 @@ __version__ = get_versions()['version']
 del get_versions
 
 
-from tvd.series.plugin import SeriesPlugin
+from tvd import Plugin
 import re
 import urllib3
 from bs4 import BeautifulSoup
 from tvd import TFloating, TStart, TEnd, AnnotationGraph
 
 
-class GameOfThrones(SeriesPlugin):
+class GameOfThrones(Plugin):
 
     def outline(self, url=None, episode=None, **kwargs):
         """
@@ -119,7 +119,6 @@ class GameOfThrones(SeriesPlugin):
         http = urllib3.PoolManager()
         r = http.request('GET', url)
         soup = BeautifulSoup(r.data)
-    
 
         G = AnnotationGraph(episode=episode)
         t1 = TStart()
@@ -138,7 +137,7 @@ class GameOfThrones(SeriesPlugin):
             if element.name == "h4" and ok == 1:
                 if end == 1:
                     t3 = TFloating()
-                    G.add_annotation(t2, t3, {'location': scene_location}, {'summary': sp})
+                    G.add_annotation(t2, t3, {'location': scene_location, 'summary': sp})
                     sp = ""
                 end = 1
                 scene_location = element.contents[0].text
@@ -147,7 +146,7 @@ class GameOfThrones(SeriesPlugin):
             if element.name == "h3":
                 if ok == 1:
                     t3 = TFloating()
-                    G.add_annotation(t2, t3, {'location': scene_location}, {'summary': sp})
+                    G.add_annotation(t2, t3, {'location': scene_location, 'summary': sp})
                 ok = 0
 
         # add /empty/ edge between previous annotation and episode end
