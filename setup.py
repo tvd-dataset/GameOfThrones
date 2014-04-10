@@ -76,7 +76,7 @@ setup(
     author_email=AUTHOR_EMAIL,
     packages=find_packages(),
     package_data={
-        SERIES_NAME: ['tvd.yml']
+        SERIES_NAME: ['tvd.yml', 'data/mapping.txt']
     },
     include_package_data=True,
     install_requires=[REQUIRES_TVD] + REQUIRES_OTHER,
