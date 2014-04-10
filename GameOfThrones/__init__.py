@@ -156,16 +156,17 @@ class GameOfThrones(Plugin):
 
         return G
 
+    # load name mapping
+    def _get_mapping(self):
+        path = resource_filename(self.__class__.__name__, 'data/mapping.txt')
+        with open(path, 'r') as _:
+            mapping = dict(line.split() for line in _.readlines())
+        return mapping
+
     def manual_transcript(self, url=None, episode=None, **kwargs):
-        pathToMappingFile = resource_filename(self.__class__.name__, 'data/mapping.txt')
-        mapping = {}
-        f = open(pathToMappingFile, 'r')
-
-        for line in f:
-            name = line.rstrip('\n\r').split('\t')
-            mapping.update({name[0]: name[1]})
-
-        f.close()
+        
+        # load name mapping
+        mapping = self._get_mapping()
 
         http = urllib3.PoolManager()
         r = http.request('GET', url)
@@ -202,8 +203,8 @@ class GameOfThrones(Plugin):
                     if re.match("(.*)_\(|\[(.*)\)|\]", spk):
                         match = re.match("(.*)_\(|\[(.*)\)|\]", spk)
                         spk = match.group(1)
-                    if spk in mapping:
-                        spk = mapping.get(spk)
+
+                    spk = mapping.get(spk, spk)
 
                     if re.match("(.*)/(.*)", spk):
                         spks = spk.split('/')
@@ -232,8 +233,7 @@ class GameOfThrones(Plugin):
                     if re.match("(.*)_\(|\[(.*)\)|\]", spk):
                         match = re.match("(.*)_\(|\[(.*)\)|\]", spk)
                         spk = match.group(1)
-                    if spk in mapping:
-                        spk = mapping.get(spk)
+                    spk = mapping.get(spk, spk)
                     
                     if re.match("(.*)/(.*)", spk):
                         spks = spk.split('/')
