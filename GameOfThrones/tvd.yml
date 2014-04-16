@@ -37,7 +37,18 @@ episodes: [10, 10, 10]
 www:
 
     outline:
-        source: "gameofthrones.wikia.com"
+
+        description: >
+            Detailed textual description of episode scenes
+
+        source: |
+            @misc{wikia,
+                title = {{Game of Thrones Wiki}},
+                howpublished = \url{http://gameofthrones.wikia.com/}
+            }
+
+        type: annotation graph
+
         url:
             - {season: 1, episode: 1, url: "http://gameofthrones.wikia.com/wiki/Winter_is_Coming_recap"}
             - {season: 1, episode: 2, url: "http://gameofthrones.wikia.com/wiki/The_Kingsroad_recap"}
@@ -58,17 +69,44 @@ www:
             - {season: 3, episode: 1, url: "http://gameofthrones.wikia.com/wiki/Valar_Dohaeris_recap"}
 
     manual_transcript:
-        source: "foreverdreaming.org"
+
+        description: >
+            Manual transcription of dialogues with speaker name.
+
+        source: |
+            @misc{foreverdreaming,
+                title = {{Forever Dreaming}},
+                howpublished = \url{http://foreverdreaming.org/}
+            }
+
+        type: annotation graph
+
         url:
-            - {season: 1, episode: 1, url: "http://foreverdreaming.org/viewtopic.php?f=67&t=7743#.Uk0xGlOHMg4"}
-            - {season: 1, episode: 2, url: "http://foreverdreaming.org/viewtopic.php?f=67&t=7871#.Uk0xG1OHMg4"}
-            - {season: 1, episode: 3, url: "http://foreverdreaming.org/viewtopic.php?f=67&t=7908#.Uk0xHFOHMg4"}
-            - {season: 1, episode: 4, url: "http://foreverdreaming.org/viewtopic.php?f=67&t=7909#.Uk0xHlOHMg4"}
-            - {season: 1, episode: 5, url: "http://foreverdreaming.org/viewtopic.php?f=67&t=7744#.Uk0xH1OHMg4"}
+            - {season: 1, episode: 1, url: "http://foreverdreaming.org/viewtopic.php?f=67&t=7743"}
+            - {season: 1, episode: 2, url: "http://foreverdreaming.org/viewtopic.php?f=67&t=7871"}
+            - {season: 1, episode: 3, url: "http://foreverdreaming.org/viewtopic.php?f=67&t=7908"}
+            - {season: 1, episode: 4, url: "http://foreverdreaming.org/viewtopic.php?f=67&t=7909"}
+            - {season: 1, episode: 5, url: "http://foreverdreaming.org/viewtopic.php?f=67&t=7744"}
+
+    # see also 
+    # http://www.losttv-forum.com/forum/forumdisplay.php?f=215
+    # or 
+    # http://game-of-thrones.hypnoweb.net/episodes/saison-1/101--l-hiver-vient/script-vo-101.194.15/
 
 
     summary:
-        source: "gameofthrones.wikia.com"
+
+        description: >
+            Episode summaries.
+
+        source: |
+            @misc{wikia,
+                title = {{Game of Thrones Wiki}},
+                howpublished = \url{http://gameofthrones.wikia.com/}
+            }
+
+        type: annotation graph
+
         url:
             - {season: 1, episode: 1, url: "http://gameofthrones.wikia.com/wiki/Winter_is_Coming"}
             - {season: 1, episode: 2, url: "http://gameofthrones.wikia.com/wiki/The_Kingsroad"}

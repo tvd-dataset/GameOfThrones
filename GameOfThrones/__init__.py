@@ -34,10 +34,11 @@ del get_versions
 
 from tvd import Plugin
 import re
-import urllib3
 from bs4 import BeautifulSoup
 from tvd import TFloating, TStart, TEnd, AnnotationGraph
 from pkg_resources import resource_filename
+import requests
+
 
 class GameOfThrones(Plugin):
 
@@ -56,14 +57,12 @@ class GameOfThrones(Plugin):
         G : AnnotationGraph
         """
 
-        http = urllib3.PoolManager()
-        r = http.request('GET', url)
-        soup = BeautifulSoup(r.data)
+        r = self.download_as_utf8(url)
+        soup = BeautifulSoup(r)
         h2 = soup.find_all('h2')
         sp = ""
         i = 0
         outline = {}
-
 
         for element in h2[0].next_elements:
             if element.name == 'p':
@@ -117,9 +116,8 @@ class GameOfThrones(Plugin):
         G : AnnotationGraph
         """
 
-        http = urllib3.PoolManager()
-        r = http.request('GET', url)
-        soup = BeautifulSoup(r.data)
+        r = self.download_as_utf8(url)
+        soup = BeautifulSoup(r)
 
         G = AnnotationGraph(episode=episode)
         t1 = TStart()
@@ -168,9 +166,9 @@ class GameOfThrones(Plugin):
         # load name mapping
         mapping = self._get_mapping()
 
-        http = urllib3.PoolManager()
-        r = http.request('GET', url)
-        soup = BeautifulSoup(r.data)
+        r = self.download_as_utf8(url)
+
+        soup = BeautifulSoup(r)
 
         G = AnnotationGraph()
         t2 = TStart()
