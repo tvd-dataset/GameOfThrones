@@ -1,3 +1,7 @@
+### Version 0.3.1 (2014-04-18)
+
+  - fix: temporarily remove buggy 'summary' resources
+
 ### Version 0.3 (2014-04-16)
 
   - support for TVD 0.4
