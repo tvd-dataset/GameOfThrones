@@ -88,58 +88,52 @@ www:
             - {season: 1, episode: 4, url: "http://foreverdreaming.org/viewtopic.php?f=67&t=7909"}
             - {season: 1, episode: 5, url: "http://foreverdreaming.org/viewtopic.php?f=67&t=7744"}
 
-    # see also 
-    # http://www.losttv-forum.com/forum/forumdisplay.php?f=215
-    # or 
-    # http://game-of-thrones.hypnoweb.net/episodes/saison-1/101--l-hiver-vient/script-vo-101.194.15/
-
-
-    summary:
-
-        description: >
-            Episode summaries.
-
-        source: |
-            @misc{wikia,
-                title = {{Game of Thrones Wiki}},
-                howpublished = \url{http://gameofthrones.wikia.com/}
-            }
-
-        type: annotation graph
-
-        url:
-            - {season: 1, episode: 1, url: "http://gameofthrones.wikia.com/wiki/Winter_is_Coming"}
-            - {season: 1, episode: 2, url: "http://gameofthrones.wikia.com/wiki/The_Kingsroad"}
-            - {season: 1, episode: 3, url: "http://gameofthrones.wikia.com/wiki/Lord_Snow"}
-            - {season: 1, episode: 4, url: "http://gameofthrones.wikia.com/wiki/Cripples,_Bastards_and_Broken_Things"}
-            - {season: 1, episode: 5, url: "http://gameofthrones.wikia.com/wiki/The_Wolf_and_the_Lion"}
-            - {season: 1, episode: 6, url: "http://gameofthrones.wikia.com/wiki/A_Golden_Crown"}
-            - {season: 1, episode: 7, url: "http://gameofthrones.wikia.com/wiki/You_Win_or_You_Die"}
-            - {season: 1, episode: 8, url: "http://gameofthrones.wikia.com/wiki/The_Pointy_End"}
-            - {season: 1, episode: 9, url: "http://gameofthrones.wikia.com/wiki/Baelor"}
-            - {season: 1, episode: 10, url: "http://gameofthrones.wikia.com/wiki/Fire_and_Blood"}
-            - {season: 2, episode: 1, url: "http://gameofthrones.wikia.com/wiki/The_North_Remembers"}
-            - {season: 2, episode: 2, url: "http://gameofthrones.wikia.com/wiki/The_Night_Lands"}
-            - {season: 2, episode: 3, url: "http://gameofthrones.wikia.com/wiki/What_is_Dead_May_Never_Die"}
-            - {season: 2, episode: 4, url: "http://gameofthrones.wikia.com/wiki/Garden_of_Bones"}
-            - {season: 2, episode: 5, url: "http://gameofthrones.wikia.com/wiki/The_Ghost_of_Harrenhal"}
-            - {season: 2, episode: 6, url: "http://gameofthrones.wikia.com/wiki/The_Old_Gods_and_the_New"}
-            - {season: 2, episode: 7, url: "http://gameofthrones.wikia.com/wiki/A_Man_Without_Honor"}
-            - {season: 2, episode: 8, url: "http://gameofthrones.wikia.com/wiki/The_Prince_of_Winterfell"}
-            - {season: 2, episode: 9, url: "http://gameofthrones.wikia.com/wiki/Blackwater"}
-            - {season: 2, episode: 10, url: "http://gameofthrones.wikia.com/wiki/Valar_Morghulis"}
-            - {season: 3, episode: 1, url: "http://gameofthrones.wikia.com/wiki/Valar_Dohaeris"}
-            - {season: 3, episode: 2, url: "http://gameofthrones.wikia.com/wiki/Dark_Wings,_Dark_Words"}
-            - {season: 3, episode: 3, url: "http://gameofthrones.wikia.com/wiki/Walk_of_Punishment"}
-            - {season: 3, episode: 4, url: "http://gameofthrones.wikia.com/wiki/And_Now_His_Watch_is_Ended"}
-            - {season: 3, episode: 5, url: "http://gameofthrones.wikia.com/wiki/Kissed_by_Fire"}
-            - {season: 3, episode: 6, url: "http://gameofthrones.wikia.com/wiki/The_Climb"}
-            - {season: 3, episode: 7, url: "http://gameofthrones.wikia.com/wiki/The_Bear_and_the_Maiden_Fair_(episode)"}
-            - {season: 3, episode: 8, url: "http://gameofthrones.wikia.com/wiki/Second_Sons_(episode)"}
-            - {season: 3, episode: 9, url: "http://gameofthrones.wikia.com/wiki/The_Rains_of_Castamere_(episode)"}
-            - {season: 3, episode: 10, url: "http://gameofthrones.wikia.com/wiki/Mhysa"}
-            #- {season: 4, episode: 1, url: "http://gameofthrones.wikia.com/wiki/Two_Swords"}
-            #- {season: 4, episode: 2, url: "http://gameofthrones.wikia.com/wiki/The_Lion_and_the_Rose"}
-            #- {season: 4, episode: 3, url: "http://gameofthrones.wikia.com/wiki/Breaker_of_Chains"}
-            #- {season: 4, episode: 4, url: "http://gameofthrones.wikia.com/wiki/Oathkeeper"}
-            #- {season: 4, episode: 5, url: "http://gameofthrones.wikia.com/wiki/First_of_His_Name"}
+    # summary:
+    #
+    #     description: >
+    #         Episode summaries.
+    #
+    #     source: |
+    #         @misc{wikia,
+    #             title = {{Game of Thrones Wiki}},
+    #             howpublished = \url{http://gameofthrones.wikia.com/}
+    #         }
+    #
+    #     type: annotation graph
+    #
+    #     url:
+    #         - {season: 1, episode: 1, url: "http://gameofthrones.wikia.com/wiki/Winter_is_Coming"}
+    #         - {season: 1, episode: 2, url: "http://gameofthrones.wikia.com/wiki/The_Kingsroad"}
+    #         - {season: 1, episode: 3, url: "http://gameofthrones.wikia.com/wiki/Lord_Snow"}
+    #         - {season: 1, episode: 4, url: "http://gameofthrones.wikia.com/wiki/Cripples,_Bastards_and_Broken_Things"}
+    #         - {season: 1, episode: 5, url: "http://gameofthrones.wikia.com/wiki/The_Wolf_and_the_Lion"}
+    #         - {season: 1, episode: 6, url: "http://gameofthrones.wikia.com/wiki/A_Golden_Crown"}
+    #         - {season: 1, episode: 7, url: "http://gameofthrones.wikia.com/wiki/You_Win_or_You_Die"}
+    #         - {season: 1, episode: 8, url: "http://gameofthrones.wikia.com/wiki/The_Pointy_End"}
+    #         - {season: 1, episode: 9, url: "http://gameofthrones.wikia.com/wiki/Baelor"}
+    #         - {season: 1, episode: 10, url: "http://gameofthrones.wikia.com/wiki/Fire_and_Blood"}
+    #         - {season: 2, episode: 1, url: "http://gameofthrones.wikia.com/wiki/The_North_Remembers"}
+    #         - {season: 2, episode: 2, url: "http://gameofthrones.wikia.com/wiki/The_Night_Lands"}
+    #         - {season: 2, episode: 3, url: "http://gameofthrones.wikia.com/wiki/What_is_Dead_May_Never_Die"}
+    #         - {season: 2, episode: 4, url: "http://gameofthrones.wikia.com/wiki/Garden_of_Bones"}
+    #         - {season: 2, episode: 5, url: "http://gameofthrones.wikia.com/wiki/The_Ghost_of_Harrenhal"}
+    #         - {season: 2, episode: 6, url: "http://gameofthrones.wikia.com/wiki/The_Old_Gods_and_the_New"}
+    #         - {season: 2, episode: 7, url: "http://gameofthrones.wikia.com/wiki/A_Man_Without_Honor"}
+    #         - {season: 2, episode: 8, url: "http://gameofthrones.wikia.com/wiki/The_Prince_of_Winterfell"}
+    #         - {season: 2, episode: 9, url: "http://gameofthrones.wikia.com/wiki/Blackwater"}
+    #         - {season: 2, episode: 10, url: "http://gameofthrones.wikia.com/wiki/Valar_Morghulis"}
+    #         - {season: 3, episode: 1, url: "http://gameofthrones.wikia.com/wiki/Valar_Dohaeris"}
+    #         - {season: 3, episode: 2, url: "http://gameofthrones.wikia.com/wiki/Dark_Wings,_Dark_Words"}
+    #         - {season: 3, episode: 3, url: "http://gameofthrones.wikia.com/wiki/Walk_of_Punishment"}
+    #         - {season: 3, episode: 4, url: "http://gameofthrones.wikia.com/wiki/And_Now_His_Watch_is_Ended"}
+    #         - {season: 3, episode: 5, url: "http://gameofthrones.wikia.com/wiki/Kissed_by_Fire"}
+    #         - {season: 3, episode: 6, url: "http://gameofthrones.wikia.com/wiki/The_Climb"}
+    #         - {season: 3, episode: 7, url: "http://gameofthrones.wikia.com/wiki/The_Bear_and_the_Maiden_Fair_(episode)"}
+    #         - {season: 3, episode: 8, url: "http://gameofthrones.wikia.com/wiki/Second_Sons_(episode)"}
+    #         - {season: 3, episode: 9, url: "http://gameofthrones.wikia.com/wiki/The_Rains_of_Castamere_(episode)"}
+    #         - {season: 3, episode: 10, url: "http://gameofthrones.wikia.com/wiki/Mhysa"}
+    #         - {season: 4, episode: 1, url: "http://gameofthrones.wikia.com/wiki/Two_Swords"}
+    #         - {season: 4, episode: 2, url: "http://gameofthrones.wikia.com/wiki/The_Lion_and_the_Rose"}
+    #         - {season: 4, episode: 3, url: "http://gameofthrones.wikia.com/wiki/Breaker_of_Chains"}
+    #         - {season: 4, episode: 4, url: "http://gameofthrones.wikia.com/wiki/Oathkeeper"}
+    #         - {season: 4, episode: 5, url: "http://gameofthrones.wikia.com/wiki/First_of_His_Name"}

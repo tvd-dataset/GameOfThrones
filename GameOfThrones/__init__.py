@@ -101,59 +101,6 @@ class GameOfThrones(Plugin):
 
         return G
 
-    def summary(self, url=None, episode=None, **kwargs):
-        """
-        Parameters
-        ----------
-        url : str, optional
-            URL where resource is available
-        episode : Episode, optional
-            Episode for which resource should be downloaded
-            Useful in case a same URL contains resources for multiple episodes.
-
-        Returns
-        -------
-        G : AnnotationGraph
-        """
-
-        r = self.download_as_utf8(url)
-        soup = BeautifulSoup(r)
-
-        G = AnnotationGraph(episode=episode)
-        t1 = TStart()
-        t2 = TFloating()
-        G.add_annotation(t1, t2, {})
-
-        sp = ""
-        scene_location = ""
-
-        h3 = soup.find_all('h3')
-        summary_tag = h3[1]
-        ok = 1
-        end = 0
-
-        for element in summary_tag.next_elements:
-            if element.name == "h4" and ok == 1:
-                if end == 1:
-                    t3 = TFloating()
-                    G.add_annotation(t2, t3, {'location': scene_location, 'summary': sp})
-                    sp = ""
-                end = 1
-                scene_location = element.contents[0].text
-            if element.name == "p" and ok == 1:
-                sp = sp + " " + element.text
-            if element.name == "h3":
-                if ok == 1:
-                    t3 = TFloating()
-                    G.add_annotation(t2, t3, {'location': scene_location, 'summary': sp})
-                ok = 0
-
-        # add /empty/ edge between previous annotation and episode end
-        t4 = TEnd()
-        G.add_annotation(t3, t4, {})
-
-        return G
-
     # load name mapping
     def _get_mapping(self):
         path = resource_filename(self.__class__.__name__, 'data/mapping.txt')
@@ -250,3 +197,60 @@ class GameOfThrones(Plugin):
         G.add_annotation(t1, t2, {})
 
         return G
+
+    # def summary(self, url=None, episode=None, **kwargs):
+    #     """
+    #     Parameters
+    #     ----------
+    #     url : str, optional
+    #         URL where resource is available
+    #     episode : Episode, optional
+    #         Episode for which resource should be downloaded
+    #         Useful in case a same URL contains resources for multiple episodes.
+    #
+    #     Returns
+    #     -------
+    #     G : AnnotationGraph
+    #     """
+    #
+    #     r = self.download_as_utf8(url)
+    #     soup = BeautifulSoup(r)
+    #
+    #     G = AnnotationGraph(episode=episode)
+    #     t1 = TStart()
+    #     t2 = TFloating()
+    #     G.add_annotation(t1, t2, {})
+    #     t5 = TFloating()
+    #   
+    #     sp = ""
+    #     scene_location = ""
+    #
+    #     h3 = soup.find_all('h3')
+    #     summary_tag = h3[1]
+    #     ok = 1
+    #     end = 0
+    #
+    #     for element in summary_tag.next_elements:
+    #         if element.name == "h4" and ok == 1:
+    #             if end == 1:
+    #                 t3 = TFloating()
+    #                 G.add_annotation(t2, t3, {'location': scene_location, 'summary': sp})
+    #                 sp = ""
+    #             end = 1
+    #             scene_location = element.contents[0].text
+    #         if element.name == "p" and ok == 1:
+    #             sp = sp + " " + element.text
+    #         if element.name == "h3":
+    #             if ok == 1:
+    #                 t3 = TFloating()
+    #                 G.add_annotation(t2, t3, {})
+    #                 t4 = TFloating()
+    #                 G.add_annotation(t3, t4, {'location': scene_location, 'summary': sp})
+    #                 G.add_annotation(t4, t5, {})
+    #             ok = 0
+    #
+    #     # add /empty/ edge between previous annotation and episode end
+    #     t6 = TEnd()
+    #     G.add_annotation(t5, t6, {})
+    #
+    #     return G
