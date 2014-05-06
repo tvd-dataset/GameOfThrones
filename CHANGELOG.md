@@ -1,3 +1,7 @@
+### Versoin 0.4 (2014-05-06)
+
+  - chore: support for tvd 0.5
+
 ### Version 0.3.1 (2014-04-18)
 
   - fix: temporarily remove buggy 'summary' resources
