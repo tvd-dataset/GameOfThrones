@@ -35,7 +35,7 @@ del get_versions
 from tvd import Plugin
 import re
 from bs4 import BeautifulSoup
-from tvd import TFloating, TStart, TEnd, AnnotationGraph
+from tvd import T, TStart, TEnd, Transcription
 from pkg_resources import resource_filename
 import requests
 
@@ -54,7 +54,7 @@ class GameOfThrones(Plugin):
 
         Returns
         -------
-        G : AnnotationGraph
+        G : Transcription
         """
 
         r = self.download_as_utf8(url)
@@ -77,27 +77,27 @@ class GameOfThrones(Plugin):
                 outline.update({i:sp})
 
 
-        G = AnnotationGraph(episode=episode)
-        t2 = TStart()
+        G = Transcription(episode=episode)
+        t2 = TStart
 
         i = 1
         while outline.get(i):
             # add /empty/ edge between previous and next annotations
             t1 = t2
-            t2 = TFloating()
-            G.add_annotation(t1, t2, {})
+            t2 = T()
+            G.add_edge(t1, t2)
 
             # add next annotation
             t1 = t2
-            t2 = TFloating()
-            G.add_annotation(t1, t2, {'scene': outline.get(i)})
+            t2 = T()
+            G.add_edge(t1, t2, scene=outline.get(i))
 
             i = i + 1
 
         # add /empty/ edge between previous annotation and episode end
         t1 = t2
-        t2 = TEnd()
-        G.add_annotation(t1, t2, {})
+        t2 = TEnd
+        G.add_edge(t1, t2)
 
         return G
 
@@ -117,8 +117,8 @@ class GameOfThrones(Plugin):
 
         soup = BeautifulSoup(r)
 
-        G = AnnotationGraph()
-        t2 = TStart()
+        G = Transcription(episode=episode)
+        t2 = TStart
 
         div = soup.find_all('div')
         transcript = ""
@@ -136,12 +136,12 @@ class GameOfThrones(Plugin):
 
                     # add /empty/ edge between previous and next annotations
                     t1 = t2
-                    t2 = TFloating()
-                    G.add_annotation(t1, t2, {})
+                    t2 = T()
+                    G.add_edge(t1, t2)
 
                     # add next annotation
                     t1 = t2
-                    t2 = TFloating()
+                    t2 = T()
 
                     spk = ligne[0].lower().replace(' ', '_')
 
@@ -155,24 +155,24 @@ class GameOfThrones(Plugin):
                         spks = spk.split('/')
                         if spks[0] in mapping:
                             spk = mapping.get(spks[0])
-                            G.add_annotation(t1, t2, {'speaker': spk, 'speech': ligne[1]})
+                            G.add_edge(t1, t2, speaker=spk, speech=ligne[1])
                         if spks[1] in mapping:
                             spk = mapping.get(spks[1])
-                            G.add_annotation(t1, t2, {'speaker': spk, 'speech': ligne[1]})
+                            G.add_edge(t1, t2, speaker=spk, speech=ligne[1])
                     else:
-                        G.add_annotation(t1, t2, {'speaker': spk, 'speech': ligne[1]})
+                        G.add_edge(t1, t2, speaker=spk, speech=ligne[1])
 
                 elif re.match("(.*): (.*)", string) and not re.match("Credit: (.*)", string) and not re.match("(.*) by: (.*)", string):
                     ligne = re.split(': ', transcript.contents[i])
 
                     # add /empty/ edge between previous and next annotations
                     t1 = t2
-                    t2 = TFloating()
-                    G.add_annotation(t1, t2, {})
+                    t2 = T()
+                    G.add_edge(t1, t2)
 
                     # add next annotation
                     t1 = t2
-                    t2 = TFloating()
+                    t2 = T()
                     spk = ligne[0].lower().replace(' ', '_')
 
                     if re.match("(.*)_\(|\[(.*)\)|\]", spk):
@@ -184,17 +184,17 @@ class GameOfThrones(Plugin):
                         spks = spk.split('/')
                         if spks[0] in mapping:
                             spk = mapping.get(spks[0])
-                            G.add_annotation(t1, t2, {'speaker': spk, 'speech': ligne[1]})
+                            G.add_edge(t1, t2, speaker=spk, speech=ligne[1])
                         if spks[1] in mapping:
                             spk = mapping.get(spks[1])
-                            G.add_annotation(t1, t2, {'speaker': spk, 'speech': ligne[1]})
+                            G.add_edge(t1, t2, speaker=spk, speech=ligne[1])
                     else:
-                        G.add_annotation(t1, t2, {'speaker': spk, 'speech': ligne[1]})
+                        G.add_edge(t1, t2, speaker=spk, speech=ligne[1])
 
         # add /empty/ edge between previous annotation and episode end
         t1 = t2
-        t2 = TEnd()
-        G.add_annotation(t1, t2, {})
+        t2 = TEnd
+        G.add_edge(t1, t2)
 
         return G
 
@@ -210,17 +210,17 @@ class GameOfThrones(Plugin):
     #
     #     Returns
     #     -------
-    #     G : AnnotationGraph
+    #     G : Transcription
     #     """
     #
     #     r = self.download_as_utf8(url)
     #     soup = BeautifulSoup(r)
     #
-    #     G = AnnotationGraph(episode=episode)
-    #     t1 = TStart()
-    #     t2 = TFloating()
-    #     G.add_annotation(t1, t2, {})
-    #     t5 = TFloating()
+    #     G = Transcription(episode=episode)
+    #     t1 = TStart
+    #     t2 = T()
+    #     G.add_edge(t1, t2)
+    #     t5 = T()
     #   
     #     sp = ""
     #     scene_location = ""
@@ -233,8 +233,8 @@ class GameOfThrones(Plugin):
     #     for element in summary_tag.next_elements:
     #         if element.name == "h4" and ok == 1:
     #             if end == 1:
-    #                 t3 = TFloating()
-    #                 G.add_annotation(t2, t3, {'location': scene_location, 'summary': sp})
+    #                 t3 = T()
+    #                 G.add_edge(t2, t3, location=scene_location, summary=sp)
     #                 sp = ""
     #             end = 1
     #             scene_location = element.contents[0].text
@@ -242,15 +242,15 @@ class GameOfThrones(Plugin):
     #             sp = sp + " " + element.text
     #         if element.name == "h3":
     #             if ok == 1:
-    #                 t3 = TFloating()
-    #                 G.add_annotation(t2, t3, {})
-    #                 t4 = TFloating()
-    #                 G.add_annotation(t3, t4, {'location': scene_location, 'summary': sp})
-    #                 G.add_annotation(t4, t5, {})
+    #                 t3 = T()
+    #                 G.add_edge(t2, t3)
+    #                 t4 = T()
+    #                 G.add_edge(t3, t4, location=scene_location, summary=sp)
+    #                 G.add_edge(t4, t5)
     #             ok = 0
     #
     #     # add /empty/ edge between previous annotation and episode end
-    #     t6 = TEnd()
-    #     G.add_annotation(t5, t6, {})
+    #     t6 = TEnd
+    #     G.add_edge(t5, t6)
     #
     #     return G
