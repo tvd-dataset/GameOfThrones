@@ -1,0 +1,328 @@
+WAYMAR_ROYCE What do you expect? They're savages. One lot steals a goat from another lot and before you know it, they're ripping each other to pieces.
+WILL I've never seen wildlings do a thing like this. I've never seen a thing like this, not ever in my life.
+WAYMAR_ROYCE How close did you get?
+WILL Close as any man would.
+GARED We should head back to the wall.
+WAYMAR_ROYCE Do the dead frighten you?
+GARED Our orders were to track the wildlings. We tracked them. They won't trouble us no more.
+WAYMAR_ROYCE You don't think he'll ask us how they died? Get back on your horse.
+WILL Whatever did it to them could do it to us. They even killed the children.
+WAYMAR_ROYCE It's a good thing we're not children. You want to run away south, run away. Of course, they will behead you as a deserter ... if I don't catch you first. Get back on your horse. I won't say it again.
+WAYMAR_ROYCE Your dead men seem to have moved camp.
+WILL They were here.
+GARED See where they went.
+WAYMAR_ROYCE What is it?
+GARED It's ...
+JON_SNOW Go on. Father's watching.
+JON_SNOW And your mother.
+SEPTA_MORDANE Fine work, as always. Well done.
+SANSA_STARK Thank you.
+SEPTA_MORDANE I love the detail that you've managed to get in this corners. Quite beautiful ... the stitching ...
+EDDARD_STARK And which one of you was a marksman at ten? Keep practicing, Bran. Go on.
+JON_SNOW Don't think too much, Bran.
+ROBB_STARK Relax your bow arm.
+ROBB_STARK Quick, Bran, faster!
+RODRIK_CASSEL Lord Stark. My lady. A guardsman just rode in from the hills. They've captured a deserter from the Night's Watch.
+EDDARD_STARK Get the lads to saddle their horses.
+CATELYN_STARK Do you have to?
+EDDARD_STARK He swore an oath, Cat.
+RODRIK_CASSEL The law is law, my lady.
+EDDARD_STARK Tell Bran he's coming, too.
+CATELYN_STARK Ned. Ten is too young to see such things.
+EDDARD_STARK He won't be a boy forever. And winter is coming.
+ROBB_STARK Lad, go run back and get the rest.
+WILL White Walkers. I saw the White Walkers. White Walkers. The White Walkers, I saw them.
+WILL I know I broke my oath. And I know I'm a deserter. I should have gone back to the Wall and warned them. But I saw what I saw. I saw the White Walkers. People need to know. If you can get word to my family, tell them I'm no coward. Tell them I'm sorry.
+WILL Forgive me, lord.
+EDDARD_STARK In the name of Robert of the House Baratheon, first of his name ...
+JON_SNOW Don't look away.
+EDDARD_STARK King of the Andals and the First Men...
+JON_SNOW Father will know if you do.
+EDDARD_STARK Lord of the Seven Kingdoms and protector of the realm, I, Eddard of the House Stark, Lord of Winterfell and Warden of the North, sentence you to die.
+JON_SNOW You did well.
+EDDARD_STARK You understand why I did it?
+BRAN_STARK Jon said he was a deserter.
+EDDARD_STARK But do you understand why I had to kill him?
+BRAN_STARK Our way is the old way?
+EDDARD_STARK The man who passes the sentence should swing the sword.
+BRAN_STARK Is it true he saw the White Walkers?
+EDDARD_STARK The White Walkers have been gone for thousands of years.
+BRAN_STARK So he was lying?
+EDDARD_STARK A madman sees what he sees.
+JON_SNOW What is it?
+THEON_GREYJOY Mountain lion?
+EDDARD_STARK There are no mountain lions in these woods.
+THEON_GREYJOY It's a freak.
+EDDARD_STARK It's a direwolf.
+EDDARD_STARK Tough old beast.
+ROBB_STARK There are no direwolves south of the Wall.
+JON_SNOW Now there are five.
+JON_SNOW You want to hold it?
+BRAN_STARK Where will they go? Their mother's dead.
+RODRIK_CASSEL They don't belong down here.
+EDDARD_STARK Better a quick death. They won't last without their mother.
+THEON_GREYJOY Right. Give it here.
+BRAN_STARK No!
+ROBB_STARK Put away your blade.
+THEON_GREYJOY I take orders from your father, not you.
+BRAN_STARK Please, father!
+EDDARD_STARK I'm sorry, Bran.
+JON_SNOW Lord Stark? There are five pups. One for each of the Stark children. The direwolf is the sigil of your House. They were meant to have them.
+EDDARD_STARK You will train them yourselves. You will feed them yourselves. And if they die, you will bury them yourselves.
+BRAN_STARK What about you?
+JON_SNOW I'm not a Stark. Get on.
+ROBB_STARK What is it?
+THEON_GREYJOY The runt of the litter. That one's yours, Snow.
+JAIME_LANNISTER As your brother, I feel it's my duty to warn you. You worry too much. It's starting to show.
+CERSEI_LANNISTER And you never worry about anything. When we were seven, you jumped off the cliffs at Casterly Rock. A hundred foot drop into the water. And you were never afraid.
+JAIME_LANNISTER There was nothing to be afraid of until you told father. We're Lannisters. Lannisters don't act like fools.
+CERSEI_LANNISTER What if Jon Arryn told someone?
+JAIME_LANNISTER But who would he tell?
+CERSEI_LANNISTER My husband.
+JAIME_LANNISTER If he told the king, both our heads would be skewered on the city gates by now. Whatever Jon Arryn knew or didn't know, it died with him. And Robert will choose a new Hand of the king, someone to do his job while he's off fucking boars and hunting whores. Or is it the other way around? And life will go on.
+CERSEI_LANNISTER You should be the Hand of the king.
+JAIME_LANNISTER That's an honor I can do without. Their days are too long, their lives are too short.
+CATELYN_STARK All these years and I still feel like an outsider when I come here.
+EDDARD_STARK You have five northern children. You're not an outsider.
+CATELYN_STARK I wonder if the old gods agree.
+EDDARD_STARK It's your gods with all the rules.
+CATELYN_STARK I am so sorry, my love.
+EDDARD_STARK Tell me.
+CATELYN_STARK There was a raven from Kings Landing. Jon Arryn is dead. A fever took him. I know he was like a father to you.
+EDDARD_STARK Your sister. The boy ...
+CATELYN_STARK They both have their health. Gods be good. The raven brought more news. The king rides for Winterfell. With the queen and all the rest of them.
+EDDARD_STARK If he's coming this far North, there's only one thing he's after.
+CATELYN_STARK You can always say no, Ned.
+CATELYN_STARK We need plenty of candles for Lord Tyrion's chamber. I'm told he reads all night.
+MAESTER_LUWIN I'm told he drinks all night.
+CATELYN_STARK How much could he possibly drink? A man of his ... stature.
+MAESTER_LUWIN We've brought up eight barrels of ale from the cellar. Perhaps we'll find out.
+CATELYN_STARK In any case, candles.
+JON_SNOW Why's your mother so dead-set on us getting pretty for the king?
+THEON_GREYJOY It's for the queen, I bet. I hear she's sleek bit of mink?
+ROBB_STARK I hear the prince is a right royal prick.
+THEON_GREYJOY Think of all those southern girls he gets to stab with his right royal prick.
+ROBB_STARK Go on, Tommy, shave him good. He's never met a girl he likes better than his own hair.
+CATELYN_STARK Gods, but they grow fast. Brandon!
+BRAN_STARK I saw the king! He's got hundreds of people!
+CATELYN_STARK How many times have I told you: No climbing!
+BRAN_STARK But he's coming right now! Down our road!
+CATELYN_STARK I want you to promise me: No more climbing.
+BRAN_STARK I promise.
+CATELYN_STARK Do you know what?
+BRAN_STARK What?
+CATELYN_STARK You always look at your feet before you lie. Run and find your father. Tell him the king is close.
+CATELYN_STARK Where's Arya? Sansa, where's your sister?
+EDDARD_STARK Hey, hey, hey, hey. What are you doing with that on? Go on.
+ARYA_STARK Move!
+EDDARD_STARK Your Grace.
+ROBERT_BARATHEON You've got fat.
+ROBERT_BARATHEON Cat!
+CATELYN_STARK Your Grace.
+ROBERT_BARATHEON Nine years. Why haven't I seen you? Where the hell have you been?
+EDDARD_STARK Guarding the North for you, Your Grace. Winterfell is yours.
+ARYA_STARK Where's the Imp?
+SANSA_STARK Will you shut up?
+ROBERT_BARATHEON Who have we here? You must be Robb. My, you're a pretty one. Your name is?
+ARYA_STARK Arya.
+ROBERT_BARATHEON Ooh. Show us your muscles. You'll be a soldier.
+ARYA_STARK That's Jaime Lannister. The queen's twin brother.
+SANSA_STARK Would you please shut up.
+EDDARD_STARK My queen.
+CATELYN_STARK My queen.
+ROBERT_BARATHEON Take me to your crypt. I want to pay my respects.
+CERSEI_LANNISTER We've been riding for a month, my love. Surely the dead can wait.
+ROBERT_BARATHEON Ned.
+ARYA_STARK Where's the Imp?
+CERSEI_LANNISTER Where is our brother? Go find the little beast.
+EDDARD_STARK Tell me about Jon Arryn.
+ROBERT_BARATHEON One minute he was fine, and then ... Burned right through him, whatever it was. I loved that man.
+EDDARD_STARK We both did.
+ROBERT_BARATHEON He never had to teach you much, but me ... You remember me at 16? All I wanted to do was crack skulls and fuck girls. He showed me what was what.
+EDDARD_STARK Aye.
+ROBERT_BARATHEON Don't look at me like that. Not his fault I didn't listen. I need you, Ned. Down at Kings Landing. Not up here, where you're no damn use to anybody. Lord Eddard Stark, I would name you the Hand of the king.
+EDDARD_STARK I'm not worthy of the honor.
+ROBERT_BARATHEON I'm not trying to honor you. I'm trying to get you to run my kingdom while I eat, drink, and whore my way to an early grave. Damn it, Ned, stand up. You helped me win the Iron Throne, now help me keep the damn thing. We were meant to rule together. If your sister had lived, we would have been bound by blood. Well, it's not too late. I have a son, you have a daughter. We'll join our Houses.
+TYRION_LANNISTER Mmh. It is true what they say about the Northern girls.
+ROS Did you hear the king's in Winterfell?
+TYRION_LANNISTER I did hear something about that.
+ROS And the queen. And her twin brother. They say that he is the most handsome man in the Seven Kingdoms.
+TYRION_LANNISTER And the other brother?
+ROS The queen has two brothers?
+TYRION_LANNISTER There's the pretty one. And there's the clever one.
+ROS I hear they call him the Imp.
+TYRION_LANNISTER I hear he hates that nickname.
+ROS Oh? I hear he's more than earned it. I hear he's a drunken little lecher into all manner of perversions.
+TYRION_LANNISTER Clever girl.
+ROS We've been expecting you, Lord Tyrion.
+TYRION_LANNISTER Have you?
+TYRION_LANNISTER The gods gave me one blessing.
+JAIME_LANNISTER Don't get up.
+ROS M'lord.
+TYRION_LANNISTER Should I explain to you the meaning of a closed door in a whorehouse, brother?
+JAIME_LANNISTER You've much to teach me, no doubt. But our sister craves your attention.
+TYRION_LANNISTER She has odd cravings, our sister.
+JAIME_LANNISTER A family trait. Now, the Starks are feasting us at sundown. Don't leave me alone with these people.
+TYRION_LANNISTER I'm sorry, I've begun the feast a bit early. And this is the first of many courses.
+JAIME_LANNISTER I thought you might say that. But since we're short on time, Come on, girls. See you at sundown.
+TYRION_LANNISTER Close the door!
+ROBERT_BARATHEON Did you have to bury her in a place like this? She should be on a hill somewhere with the sun and the clouds above her.
+EDDARD_STARK She was my sister. This is where she belongs.
+ROBERT_BARATHEON She belonged with me. In my dreams, I kill him every night.
+EDDARD_STARK It's done, Your Grace. The Targaryens are gone.
+ROBERT_BARATHEON Not all of them.
+VISERYS_TARGARYEN Daenerys!
+VISERYS_TARGARYEN Daenerys! There's our bride to be! Look - a gift from Illyrio. Touch it. Go on. Feel the fabric. Mmmm. Isn't he a gracious host?
+DAENERYS_TARGARYEN We've been his guests for over a year and he's never asked us for anything.
+VISERYS_TARGARYEN Illyrio is no fool. He knows I won't forget my friends when I come into my throne. You still slouch. Let me see. You have a woman's body now. I need you to be perfect today. Can you do that for me? You don't want to wake the dragon, do you?
+DAENERYS_TARGARYEN No.
+VISERYS_TARGARYEN When they write the history of my reign, sweet sister, they will say it began today.
+MAID It's too hot, my lady.
+VISERYS_TARGARYEN Where is he?
+ILLYRIO_MOPATIS The Dothraki are not known for their punctuality.
+ILLYRIO_MOPATIS May I present my honored guests? Viserys of House Targaryen, the third of his name. The rightful King of the Andals and the First Men. And his sister, Daenerys, of the House Targaryen.
+VISERYS_TARGARYEN Do you see how long his hair is? When Dothraki are defeated in combat, they cut off their braid so the whole world can see their shame. Khal Drogo has never been defeated. He's a savage, of course, but he's one of the finest killers alive. And you will be his queen.
+ILLYRIO_MOPATIS Come forward, my dear.
+VISERYS_TARGARYEN Where's he going?
+ILLYRIO_MOPATIS The ceremony is over.
+VISERYS_TARGARYEN But he didn't say anything. Did he like her?
+ILLYRIO_MOPATIS Trust me, Your Grace. If he didn't like her, we'd know.
+ILLYRIO_MOPATIS It won't be long now. Soon you will cross the Narrow Sea and take back your father's throne. The people drink secret toasts to your health. They cry out for their true king.
+VISERYS_TARGARYEN When will they be married?
+ILLYRIO_MOPATIS Soon. The Dothraki never stay still for long.
+VISERYS_TARGARYEN Is it true they lie with their horses?
+ILLYRIO_MOPATIS I wouldn't ask Khal Drogo.
+VISERYS_TARGARYEN Do you take me for a fool?
+ILLYRIO_MOPATIS I take you for a king. Kings lack the caution of common men. My apologies if I've given offense.
+VISERYS_TARGARYEN I know how to play a man like Drogo. I give him a queen and he gives me an army.
+DAENERYS_TARGARYEN I don't want to be his queen. I want to go home.
+VISERYS_TARGARYEN So do I. I want us both to go home. But they took it from us. So tell me, sweet sister, how do we go home?
+DAENERYS_TARGARYEN I don't know.
+VISERYS_TARGARYEN We go home with an army. With Khal Drogo's army. I would let his whole tribe fuck you, all 40,000 men and their horses too, if that's what it took.
+SANSA_STARK Do you think Joffrey will like me? What if he thinks I'm ugly?
+CATELYN_STARK Then he is the stupidest prince that ever lived.
+SANSA_STARK He's so handsome.
+SANSA_STARK When would we be married? Soon or do we have to wait?
+CATELYN_STARK Hush now. Your father hasn't even said yes.
+SANSA_STARK Why would he say no? He'd be the second most powerful man in the kingdoms.
+CATELYN_STARK He'd have to leave home. He'd have to leave me. And so would you.
+SANSA_STARK You left your home to come here. And I'd be queen someday. Please make father say yes.
+CATELYN_STARK Sansa ...
+SANSA_STARK Please, please. It's the only thing I ever wanted.
+BENJEN_STARK Is he dead yet?
+JON_SNOW Uncle Benjen!
+BENJEN_STARK You got bigger. Rode all day. Didn't want to leave you alone with the Lannisters. Why aren't you at the feast?
+JON_SNOW Lady Stark thought it might insult the royal family to seat a bastard in their midst.
+BENJEN_STARK Well, you're always welcome on the wall. No bastard was ever refused a seat there.
+JON_SNOW So take me with you when you go back.
+BENJEN_STARK Jon ...
+JON_SNOW Father will let me if you ask him, I know he will.
+BENJEN_STARK The Wall isn't going anywhere.
+JON_SNOW I'm ready to swear your oath.
+BENJEN_STARK You don't understand what you'd be giving up. We have no families. None of us will ever father sons.
+JON_SNOW I don't care about that.
+BENJEN_STARK You might, if you knew what it meant. I'd better get inside. Rescue your father from his guests. We'll talk later.
+TYRION_LANNISTER Your uncle's in the Night's Watch.
+JON_SNOW What're you doing back there?
+TYRION_LANNISTER Preparing for a night with your family. I've always wanted to see the Wall.
+JON_SNOW You're Tyrion Lannister. The queen's brother?
+TYRION_LANNISTER My greatest accomplishment. You - you're Ned Stark's bastard, aren't you?
+TYRION_LANNISTER Did I offend you? Sorry. You are the bastard, though.
+JON_SNOW Lord Eddard Stark is my father.
+TYRION_LANNISTER And Lady Stark is not your mother. Making you a bastard. Let me give you some advice, bastard. Never forget what you are. The rest of the world will not. Wear it like armor. Then it can never be used to hurt you.
+JON_SNOW What the hell do you know about being a bastard?
+TYRION_LANNISTER All dwarves are bastards in their fathers' eyes.
+BENJEN_STARK You at a feast -- It's like a bear in a trap.
+EDDARD_STARK The boy I beheaded. Did you know him?
+BENJEN_STARK Of course I did. Just a lad. But he was tough, Ned. A true Ranger.
+EDDARD_STARK He was talking madness. Said the Walkers slaughtered his friends.
+BENJEN_STARK The two he was with are still missing.
+EDDARD_STARK A wildling ambush.
+BENJEN_STARK Maybe. Direwolves south of the wall. Talk of the Walkers. My brother might be the next Hand to the king. Winter is coming.
+EDDARD_STARK Winter is coming.
+ROBB_STARK Uncle Benjen.
+BENJEN_STARK Robb boy. How are you?
+ROBB_STARK I'm good.
+CATELYN_STARK Is this your first time in the North, Your Grace?
+CERSEI_LANNISTER Yes. Lovely country.
+CATELYN_STARK I'm sure it's very grim, after Kings Landing. I remember how scared I was when Ned brought me up here for the first time.
+CERSEI_LANNISTER Hello, little dove. But you are a beauty. How old are you?
+SANSA_STARK Thirteen, Your Grace.
+CERSEI_LANNISTER You're tall. Still growing?
+SANSA_STARK I think so, Your Grace.
+CERSEI_LANNISTER And have you bled yet?
+SANSA_STARK No, Your Grace.
+CERSEI_LANNISTER And your dress. Did you make it?
+CERSEI_LANNISTER Such talent. You must make something for me.
+CERSEI_LANNISTER I hear we might share a grandchild someday.
+CATELYN_STARK I hear the same.
+CERSEI_LANNISTER Your daughter will do well in the capital. Such a beauty shouldn't stay hidden up here forever.
+EDDARD_STARK Your pardon.
+JAIME_LANNISTER I hear we might be neighbors soon. I hope it's true.
+EDDARD_STARK Yes, the king has honored me with his offer.
+JAIME_LANNISTER I'm sure we'll have a tournament to celebrate the new title, if you accept. It would be good to have you in the field. The competition has become a bit stale.
+EDDARD_STARK I don't fight in tournaments.
+JAIME_LANNISTER No? Getting a little old for it?
+EDDARD_STARK I don't fight in tournaments because when I fight a man for real, I don't want him to know what I can do.
+JAIME_LANNISTER Well said.
+SANSA_STARK Arya!
+ROBB_STARK Time for bed.
+EDDARD_STARK I'm a Northman. I belong here with you, not down south in that rat's nest they call a capital.
+CATELYN_STARK I won't let him take you.
+EDDARD_STARK The king takes what he wants. That's why he's king.
+CATELYN_STARK I'll say, 'Listen, fat man, you are not taking my husband anywhere. He belongs to me now.'
+EDDARD_STARK How did he get so fat?
+CATELYN_STARK He only stops eating when it's time for a drink.
+GUARD It's Maester Luwin, my lord.
+EDDARD_STARK Send him in.
+MAESTER_LUWIN Pardon, my lord, my lady. A rider in the night from your sister.
+EDDARD_STARK Stay.
+CATELYN_STARK This was sent from the Eyrie. What's she doing at the Eyrie? She hasn't been back there since her wedding.
+EDDARD_STARK What news?
+CATELYN_STARK She's fled the capital. She says Jon Arryn was murdered. By the Lannisters. She says the king is in danger.
+EDDARD_STARK She's fresh widowed, Cat. She doesn't know what she's saying.
+CATELYN_STARK Lysa's head would be on a spike right now if the wrong people had found that letter. Do you think she would risk her life, her son's life, if she wasn't certain her husband was murdered?
+MAESTER_LUWIN If this news is true, and the Lannisters conspire against the throne, who but you can protect the king?
+CATELYN_STARK They murdered the last Hand. Now you want Ned to take the job.
+MAESTER_LUWIN The king rode for a month to ask Lord Stark's help. He's the only one he trusts. You swore the king an oath, my lord.
+CATELYN_STARK He spent half his life fighting Robert's wars. He owes him nothing. Your father and brother rode south once on a king's demand.
+MAESTER_LUWIN A different time. Different king.
+VISERYS_TARGARYEN When do I meet with the Khal? We need to begin planning the invasion.
+ILLYRIO_MOPATIS If Khal Drogo has promised you a crown, you shall have it.
+VISERYS_TARGARYEN When?
+ILLYRIO_MOPATIS When their omens favor war.
+VISERYS_TARGARYEN I piss on Dothraki omens. I waited 17 years to get my throne back.
+ILLYRIO_MOPATIS A Dothraki wedding without at least three deaths is considered a dull affair.
+JORAH_MORMONT A small gift, for the new Khaleesi. Songs and histories from the Seven Kingdoms.
+DAENERYS_TARGARYEN Thank you, ser. Are you from my country?
+JORAH_MORMONT Ser Jorah Mormont of Bear Island. I served your father for many years. Gods be good, I hope to always serve the rightful king.
+ILLYRIO_MOPATIS Dragons' eggs, Daenerys. From the Shadow Lands beyond Asshai. The ages have turned them to stone, but they will always be beautiful.
+DAENERYS_TARGARYEN Thank you, Magister.
+DAENERYS_TARGARYEN She's beautiful. ... Ser Jorah, I don't know how to say 'thank you' in Dothraki.
+JORAH_MORMONT There is no word for 'thank you' in Dothraki.
+VISERYS_TARGARYEN Make him happy.
+KHAL_DROGO No.
+DAENERYS_TARGARYEN Do you know the Common Tongue?
+KHAL_DROGO No.
+DAENERYS_TARGARYEN Is 'no' the only word that you know?
+KHAL_DROGO No.
+SANDOR_CLEGANE Rough night, Imp?
+TYRION_LANNISTER If I get through this without squirting from one end or the other, it will be a miracle.
+SANDOR_CLEGANE I didn't pick you for a hunter.
+TYRION_LANNISTER The greatest in the land. My spear never misses.
+SANDOR_CLEGANE It's not hunting if you pay for it.
+ROBERT_BARATHEON Are you as good with a spear as you used to be?
+EDDARD_STARK No, but I'm still better than you.
+ROBERT_BARATHEON I know what I'm putting you through. Thank you for saying yes. I only ask you because I need you. You're a loyal friend. You hear me? A loyal friend. The last one I've got.
+EDDARD_STARK I hope I'll serve you well.
+ROBERT_BARATHEON You will. And I'll make sure you don't look so fucking grim all the time. Come on, boys, let's go kill some boar!
+BRAN_STARK Come on, you.
+CERSEI_LANNISTER Stop. Stop!
+JAIME_LANNISTER Are you completely mad?
+CERSEI_LANNISTER He saw us.
+JAIME_LANNISTER It's all right. It's all right. It's all right.
+CERSEI_LANNISTER He saw us!
+JAIME_LANNISTER I heard you the first time. Quite the little climber, aren't you? How old are you, boy?
+BRAN_STARK Ten.
+JAIME_LANNISTER Ten.
+JAIME_LANNISTER The things I do for love.
