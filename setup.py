@@ -78,11 +78,11 @@ setup(
     package_data={
         SERIES_NAME: [
             'tvd.yml',
-            'data/mapping.txt'
+            'data/mapping.txt',
             'data/scenes/mdoumbia/*',
             'data/scenes/outline/*',
-            'transcript/raw/*',
-            'transcript/ctm/*',
+            'data/transcript/raw/*',
+            'data/transcript/ctm/*',
         ]
     },
     include_package_data=True,

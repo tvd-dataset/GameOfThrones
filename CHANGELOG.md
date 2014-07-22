@@ -1,4 +1,4 @@
-### Version 0.5.1 (2014-07-22)
+### Version 0.5.2 (2014-07-22)
 
   - fix: add missing resource files
 
