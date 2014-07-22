@@ -27,20 +27,17 @@
 # SOFTWARE.
 #
 
-from ._version import get_versions
-__version__ = get_versions()['version']
-del get_versions
-
+import re
+from pkg_resources import resource_filename
+from bs4 import BeautifulSoup
 
 from tvd import Plugin
-import re
-from bs4 import BeautifulSoup
 from tvd import T, TStart, TEnd, Transcription
-from pkg_resources import resource_filename
-import requests
+from tvd import Segment, Annotation
+from pyannote.parser.ctm import CTMParser, IterLinesMixin
 
 
-class GameOfThrones(Plugin):
+class GameOfThrones(Plugin, IterLinesMixin):
 
     def outline(self, url=None, episode=None, **kwargs):
         """
@@ -108,8 +105,8 @@ class GameOfThrones(Plugin):
             mapping = dict(line.split() for line in _.readlines())
         return mapping
 
-    def manual_transcript(self, url=None, episode=None, **kwargs):
-        
+    def transcript_www(self, url=None, episode=None, **kwargs):
+
         # load name mapping
         mapping = self._get_mapping()
 
@@ -123,15 +120,15 @@ class GameOfThrones(Plugin):
         div = soup.find_all('div')
         transcript = ""
 
-        for i in range(0,len(div)):
+        for i in range(0, len(div)):
             if re.match("{'class': \['postbody'\]}", unicode(div[i].attrs)):
                 transcript = div[i]
 
-        transcription = 0
-        for i in range(0,len(transcript.contents)):
+        for i in range(0, len(transcript.contents)):
             string = unicode(transcript.contents[i])
             if not re.match("\[(.*)\]", string):
-                if re.match("(.*) : (.*)", string) and not re.match("(.*) by : (.*)", string):
+                if re.match("(.*) : (.*)", string) and \
+                   not re.match("(.*) by : (.*)", string):
                     ligne = re.split(' : ', transcript.contents[i])
 
                     # add /empty/ edge between previous and next annotations
@@ -162,7 +159,11 @@ class GameOfThrones(Plugin):
                     else:
                         G.add_edge(t1, t2, speaker=spk, speech=ligne[1])
 
-                elif re.match("(.*): (.*)", string) and not re.match("Credit: (.*)", string) and not re.match("(.*) by: (.*)", string):
+                elif (
+                    re.match("(.*): (.*)", string)
+                    and not re.match("Credit: (.*)", string)
+                    and not re.match("(.*) by: (.*)", string)
+                ):
                     ligne = re.split(': ', transcript.contents[i])
 
                     # add /empty/ edge between previous and next annotations
@@ -179,7 +180,7 @@ class GameOfThrones(Plugin):
                         match = re.match("(.*)_\(|\[(.*)\)|\]", spk)
                         spk = match.group(1)
                     spk = mapping.get(spk, spk)
-                    
+
                     if re.match("(.*)/(.*)", spk):
                         spks = spk.split('/')
                         if spks[0] in mapping:
@@ -198,6 +199,38 @@ class GameOfThrones(Plugin):
 
         return G
 
+    def transcript(self, url=None, episode=None, **kwargs):
+
+        path = resource_filename(self.__class__.__name__, url)
+        transcription = Transcription(episode=episode)
+
+        # previous dialogue end time
+        e_dialogue = None
+
+        for line in self.iterlines(path):
+
+            # ARYA_STARK I'm not a boy!
+            # speaker = ARYA_STARK
+            # speech = I'm not a boy!
+            tokens = line.split()
+            speaker = tokens[0].strip()
+            speech = ' '.join(tokens[1:]).strip()
+
+            # new dialogue
+            _s_dialogue, _e_dialogue = T(), T()
+
+            # connect dialogue with previous dialogue
+            if e_dialogue is not None:
+                transcription.add_edge(e_dialogue, _s_dialogue)
+
+            transcription.add_edge(_s_dialogue, _e_dialogue,
+                                   speaker=speaker, speech=speech)
+
+            # keep track of previous dialogue end time
+            e_dialogue = _e_dialogue
+
+        return transcription
+
     # def summary(self, url=None, episode=None, **kwargs):
     #     """
     #     Parameters
@@ -206,7 +239,8 @@ class GameOfThrones(Plugin):
     #         URL where resource is available
     #     episode : Episode, optional
     #         Episode for which resource should be downloaded
-    #         Useful in case a same URL contains resources for multiple episodes.
+    #         Useful in case a same URL contains resources
+    #         for multiple episodes.
     #
     #     Returns
     #     -------
@@ -221,7 +255,7 @@ class GameOfThrones(Plugin):
     #     t2 = T()
     #     G.add_edge(t1, t2)
     #     t5 = T()
-    #   
+    #
     #     sp = ""
     #     scene_location = ""
     #
@@ -254,3 +288,7 @@ class GameOfThrones(Plugin):
     #     G.add_edge(t5, t6)
     #
     #     return G
+
+from ._version import get_versions
+__version__ = get_versions()['version']
+del get_versions
