@@ -39,7 +39,7 @@ from pyannote.parser.ctm import CTMParser, IterLinesMixin
 
 class GameOfThrones(Plugin, IterLinesMixin):
 
-    def outline(self, url=None, episode=None, **kwargs):
+    def outline_www(self, url=None, episode=None, **kwargs):
         """
         Parameters
         ----------
@@ -65,14 +65,13 @@ class GameOfThrones(Plugin, IterLinesMixin):
             if element.name == 'p':
                 if outline.get(i) == "----":
                     sp = element.text
-                else :
+                else:
                     sp = outline.get(i) + " " + element.text
-                outline.update({i:sp})
+                outline.update({i: sp})
             if element.name == 'h2':
                 i = i + 1
                 sp = "----"
-                outline.update({i:sp})
-
+                outline.update({i: sp})
 
         G = Transcription(episode=episode)
         t2 = TStart
