@@ -97,6 +97,39 @@ class GameOfThrones(Plugin, IterLinesMixin):
 
         return G
 
+    def _scenes(self, url=None, episode=None):
+        """Load file at `url` as Annotation
+
+        File must follow the following format:
+
+        # start_time end_time label
+        0.000 10.234 beginning
+        10.234 56.000 scene_1
+        """
+
+        # initialize empty annotation
+        # uri is set to episode when provided
+        annotation = Annotation(uri=episode)
+
+        # absolute path to resource file
+        path = resource_filename(self.__class__.__name__, url)
+
+        # open file and parse it
+        with open(path, 'r') as f:
+            for line in f:
+                start, end, label = line.strip().split()
+                start = float(start)
+                end = float(end)
+                annotation[Segment(start, end)] = label
+
+        return annotation
+
+    def scenes_outline(self, url=None, episode=None, **kwargs):
+        return self._scenes(url=url, episode=episode)
+
+    def scenes(self, url=None, episode=None, **kwargs):
+        return self._scenes(url=url, episode=episode)
+
     # load name mapping
     def _get_mapping(self):
         path = resource_filename(self.__class__.__name__, 'data/mapping.txt')

@@ -88,7 +88,7 @@ resources:
             # - {season: 1, episode: 9, url: 'data/scenes/outline/GameOfThrones.Season01.Episode09.txt'}
             # - {season: 1, episode: 10, url: 'data/scenes/outline/GameOfThrones.Season01.Episode10.txt'}
 
-    scenes_mdoumbia:
+    scenes:
 
         type: annotation
 
