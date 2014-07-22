@@ -1,4 +1,10 @@
-### Versoin 0.4 (2014-05-06)
+### Version 0.5 (2014-07-22)
+
+  - feat: segmentation into scenes
+  - feat: force-aligned transcript
+  - chore: switch to tvd 0.6
+
+### Version 0.4 (2014-05-06)
 
   - chore: support for tvd 0.5
 
