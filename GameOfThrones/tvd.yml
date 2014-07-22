@@ -33,10 +33,11 @@ language: "en"
 # number of episodes per season
 episodes: [10, 10, 10]
 
-# resources that can be downloaded from the web
-www:
+resources:
 
-    outline:
+    outline_www:
+
+        type: transcription
 
         description: >
             Detailed textual description of episode scenes
@@ -47,8 +48,6 @@ www:
                 howpublished = \url{http://gameofthrones.wikia.com/}
             }
 
-        type: annotation graph
-
         url:
             - {season: 1, episode: 1, url: "http://gameofthrones.wikia.com/wiki/Winter_is_Coming_recap"}
             - {season: 1, episode: 2, url: "http://gameofthrones.wikia.com/wiki/The_Kingsroad_recap"}
@@ -56,19 +55,63 @@ www:
             - {season: 1, episode: 4, url: "http://gameofthrones.wikia.com/wiki/Cripples,_Bastards_and_Broken_Things_recap"}
             - {season: 1, episode: 5, url: "http://gameofthrones.wikia.com/wiki/The_Wolf_and_the_Lion_recap"}
             - {season: 1, episode: 6, url: "http://gameofthrones.wikia.com/wiki/A_Golden_Crown_recap"}
-            - {season: 2, episode: 1, url: "http://gameofthrones.wikia.com/wiki/The_North_Remembers_recap"}
-            - {season: 2, episode: 2, url: "http://gameofthrones.wikia.com/wiki/The_Night_Lands_recap"}
-            - {season: 2, episode: 3, url: "http://gameofthrones.wikia.com/wiki/What_is_Dead_May_Never_Die_recap"}
-            - {season: 2, episode: 4, url: "http://gameofthrones.wikia.com/wiki/Garden_of_Bones_recap"}
-            - {season: 2, episode: 5, url: "http://gameofthrones.wikia.com/wiki/The_Ghost_of_Harrenhal_recap"}
-            - {season: 2, episode: 6, url: "http://gameofthrones.wikia.com/wiki/The_Old_Gods_and_the_New_recap"}
-            - {season: 2, episode: 7, url: "http://gameofthrones.wikia.com/wiki/A_Man_Without_Honor_recap"}
-            - {season: 2, episode: 8, url: "http://gameofthrones.wikia.com/wiki/The_Prince_of_Winterfell_recap"}
-            - {season: 2, episode: 9, url: "http://gameofthrones.wikia.com/wiki/Blackwater_recap"}
-            - {season: 2, episode: 10, url: "http://gameofthrones.wikia.com/wiki/Valar_Morghulis_recap"}
-            - {season: 3, episode: 1, url: "http://gameofthrones.wikia.com/wiki/Valar_Dohaeris_recap"}
+            # - {season: 2, episode: 1, url: "http://gameofthrones.wikia.com/wiki/The_North_Remembers_recap"}
+            # - {season: 2, episode: 2, url: "http://gameofthrones.wikia.com/wiki/The_Night_Lands_recap"}
+            # - {season: 2, episode: 3, url: "http://gameofthrones.wikia.com/wiki/What_is_Dead_May_Never_Die_recap"}
+            # - {season: 2, episode: 4, url: "http://gameofthrones.wikia.com/wiki/Garden_of_Bones_recap"}
+            # - {season: 2, episode: 5, url: "http://gameofthrones.wikia.com/wiki/The_Ghost_of_Harrenhal_recap"}
+            # - {season: 2, episode: 6, url: "http://gameofthrones.wikia.com/wiki/The_Old_Gods_and_the_New_recap"}
+            # - {season: 2, episode: 7, url: "http://gameofthrones.wikia.com/wiki/A_Man_Without_Honor_recap"}
+            # - {season: 2, episode: 8, url: "http://gameofthrones.wikia.com/wiki/The_Prince_of_Winterfell_recap"}
+            # - {season: 2, episode: 9, url: "http://gameofthrones.wikia.com/wiki/Blackwater_recap"}
+            # - {season: 2, episode: 10, url: "http://gameofthrones.wikia.com/wiki/Valar_Morghulis_recap"}
+            # - {season: 3, episode: 1, url: "http://gameofthrones.wikia.com/wiki/Valar_Dohaeris_recap"}
 
-    manual_transcript:
+    # ~~~ SEGMENTATION INTO SCENES ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    scenes_outline:
+
+        type: annotation
+
+        description: >
+            Temporal segmentation into scenes according to `outline`
+
+        url:            
+            - {season: 1, episode: 1, url: 'data/scenes/outline/GameOfThrones.Season01.Episode01.txt'}
+            - {season: 1, episode: 2, url: 'data/scenes/outline/GameOfThrones.Season01.Episode02.txt'}
+            - {season: 1, episode: 3, url: 'data/scenes/outline/GameOfThrones.Season01.Episode03.txt'}
+            - {season: 1, episode: 4, url: 'data/scenes/outline/GameOfThrones.Season01.Episode04.txt'}
+            - {season: 1, episode: 5, url: 'data/scenes/outline/GameOfThrones.Season01.Episode05.txt'}
+            - {season: 1, episode: 6, url: 'data/scenes/outline/GameOfThrones.Season01.Episode06.txt'}
+            # - {season: 1, episode: 7, url: 'data/scenes/outline/GameOfThrones.Season01.Episode07.txt'}
+            # - {season: 1, episode: 8, url: 'data/scenes/outline/GameOfThrones.Season01.Episode08.txt'}
+            # - {season: 1, episode: 9, url: 'data/scenes/outline/GameOfThrones.Season01.Episode09.txt'}
+            # - {season: 1, episode: 10, url: 'data/scenes/outline/GameOfThrones.Season01.Episode10.txt'}
+
+    scenes:
+
+        type: annotation
+
+        description: >
+            Temporal segmentation into scenes according to annotator `mdoumbia`
+
+        url:            
+            - {season: 1, episode: 1, url: 'data/scenes/mdoumbia/GameOfThrones.Season01.Episode01.txt'}
+            - {season: 1, episode: 2, url: 'data/scenes/mdoumbia/GameOfThrones.Season01.Episode02.txt'}
+            - {season: 1, episode: 3, url: 'data/scenes/mdoumbia/GameOfThrones.Season01.Episode03.txt'}
+            - {season: 1, episode: 4, url: 'data/scenes/mdoumbia/GameOfThrones.Season01.Episode04.txt'}
+            - {season: 1, episode: 5, url: 'data/scenes/mdoumbia/GameOfThrones.Season01.Episode05.txt'}
+            - {season: 1, episode: 6, url: 'data/scenes/mdoumbia/GameOfThrones.Season01.Episode06.txt'}
+            - {season: 1, episode: 7, url: 'data/scenes/mdoumbia/GameOfThrones.Season01.Episode07.txt'}
+            - {season: 1, episode: 8, url: 'data/scenes/mdoumbia/GameOfThrones.Season01.Episode08.txt'}
+            - {season: 1, episode: 9, url: 'data/scenes/mdoumbia/GameOfThrones.Season01.Episode09.txt'}
+            - {season: 1, episode: 10, url: 'data/scenes/mdoumbia/GameOfThrones.Season01.Episode10.txt'}
+
+    # ~~~ TRANSCRIPTS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    transcript_www:
+
+        type: transcription
 
         description: >
             Manual transcription of dialogues with speaker name.
@@ -79,14 +122,59 @@ www:
                 howpublished = \url{http://foreverdreaming.org/}
             }
 
-        type: annotation graph
-
         url:
             - {season: 1, episode: 1, url: "http://foreverdreaming.org/viewtopic.php?f=67&t=7743"}
             - {season: 1, episode: 2, url: "http://foreverdreaming.org/viewtopic.php?f=67&t=7871"}
             - {season: 1, episode: 3, url: "http://foreverdreaming.org/viewtopic.php?f=67&t=7908"}
             - {season: 1, episode: 4, url: "http://foreverdreaming.org/viewtopic.php?f=67&t=7909"}
             - {season: 1, episode: 5, url: "http://foreverdreaming.org/viewtopic.php?f=67&t=7744"}
+
+    transcript:
+
+        type: transcription
+
+        description: >
+            Manual transcription of dialogues with speaker name.
+
+        source: |
+            @misc{foreverdreaming,
+                title = {{Forever Dreaming}},
+                howpublished = \url{http://foreverdreaming.org/}
+            }
+
+        url:
+            - {season: 1, episode: 1, url: 'data/transcript/raw/GameOfThrones.Season01.Episode01.txt.gz'}
+            - {season: 1, episode: 2, url: 'data/transcript/raw/GameOfThrones.Season01.Episode02.txt.gz'}
+            - {season: 1, episode: 3, url: 'data/transcript/raw/GameOfThrones.Season01.Episode03.txt.gz'}
+            - {season: 1, episode: 4, url: 'data/transcript/raw/GameOfThrones.Season01.Episode04.txt.gz'}
+            - {season: 1, episode: 5, url: 'data/transcript/raw/GameOfThrones.Season01.Episode05.txt.gz'}
+            - {season: 1, episode: 6, url: 'data/transcript/raw/GameOfThrones.Season01.Episode06.txt.gz'}
+            - {season: 1, episode: 7, url: 'data/transcript/raw/GameOfThrones.Season01.Episode07.txt.gz'}
+            - {season: 1, episode: 8, url: 'data/transcript/raw/GameOfThrones.Season01.Episode08.txt.gz'}
+            - {season: 1, episode: 9, url: 'data/transcript/raw/GameOfThrones.Season01.Episode09.txt.gz'}
+            - {season: 1, episode: 10, url: 'data/transcript/raw/GameOfThrones.Season01.Episode10.txt.gz'}
+
+
+    transcript_aligned:
+
+        description: >
+            Forced alignment of manual transcription.
+
+        type: transcription
+
+        url:
+            - {season: 1, episode: 1, url: 'data/transcript/ctm/GameOfThrones.Season01.Episode01.ctm.gz'}
+            - {season: 1, episode: 2, url: 'data/transcript/ctm/GameOfThrones.Season01.Episode02.ctm.gz'}
+            - {season: 1, episode: 3, url: 'data/transcript/ctm/GameOfThrones.Season01.Episode03.ctm.gz'}
+            - {season: 1, episode: 4, url: 'data/transcript/ctm/GameOfThrones.Season01.Episode04.ctm.gz'}
+            - {season: 1, episode: 5, url: 'data/transcript/ctm/GameOfThrones.Season01.Episode05.ctm.gz'}
+            - {season: 1, episode: 6, url: 'data/transcript/ctm/GameOfThrones.Season01.Episode06.ctm.gz'}
+            - {season: 1, episode: 7, url: 'data/transcript/ctm/GameOfThrones.Season01.Episode07.ctm.gz'}
+            - {season: 1, episode: 8, url: 'data/transcript/ctm/GameOfThrones.Season01.Episode08.ctm.gz'}
+            - {season: 1, episode: 9, url: 'data/transcript/ctm/GameOfThrones.Season01.Episode09.ctm.gz'}
+            - {season: 1, episode: 10, url: 'data/transcript/ctm/GameOfThrones.Season01.Episode10.ctm.gz'}
+
+    # ~~~ SUMMARIES ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     # summary:
     #
@@ -99,7 +187,7 @@ www:
     #             howpublished = \url{http://gameofthrones.wikia.com/}
     #         }
     #
-    #     type: annotation graph
+    #     type: transcription
     #
     #     url:
     #         - {season: 1, episode: 1, url: "http://gameofthrones.wikia.com/wiki/Winter_is_Coming"}

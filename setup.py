@@ -42,7 +42,7 @@ AUTHOR_NAME = 'Camille Guinaudeau'
 AUTHOR_EMAIL = 'guinaudeau@limsi.fr'
 
 # TVD compatibility version
-REQUIRES_TVD = 'tvd>=0.5'
+REQUIRES_TVD = 'tvd>=0.6.1'
 
 # Additional package dependency
 REQUIRES_OTHER = [
