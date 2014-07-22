@@ -1,3 +1,7 @@
+### Version 0.5.1 (2014-07-22)
+
+  - fix: add missing resource files
+
 ### Version 0.5 (2014-07-22)
 
   - feat: segmentation into scenes
