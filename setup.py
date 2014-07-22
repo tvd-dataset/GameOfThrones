@@ -42,11 +42,12 @@ AUTHOR_NAME = 'Camille Guinaudeau'
 AUTHOR_EMAIL = 'guinaudeau@limsi.fr'
 
 # TVD compatibility version
-REQUIRES_TVD = 'tvd>=0.5'
+REQUIRES_TVD = 'tvd>=0.6.1'
 
 # Additional package dependency
 REQUIRES_OTHER = [
     'beautifulsoup4>=4.3.2',
+    'pyannote.parser >= 0.0.2'
 ]
 
 # --- DO NOT MODIFY ANYTHING AFTER THIS LINE ---
@@ -75,7 +76,14 @@ setup(
     author_email=AUTHOR_EMAIL,
     packages=find_packages(),
     package_data={
-        SERIES_NAME: ['tvd.yml', 'data/mapping.txt']
+        SERIES_NAME: [
+            'tvd.yml',
+            'data/mapping.txt',
+            'data/scenes/mdoumbia/*',
+            'data/scenes/outline/*',
+            'data/transcript/raw/*',
+            'data/transcript/ctm/*',
+        ]
     },
     include_package_data=True,
     install_requires=[REQUIRES_TVD] + REQUIRES_OTHER,
