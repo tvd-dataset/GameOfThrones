@@ -4,9 +4,7 @@
 #
 # The MIT License (MIT)
 #
-# Copyright (c) 2013-2014 CNRS
-# - Camille GUINAUDEAU
-# - Hervé BREDIN (http://herve.niderb.fr/)
+# Copyright (c) 2013-2015 CNRS
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -26,7 +24,10 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 #
-
+# AUTHORS
+# Hervé BREDIN -- http://herve.niderb.fr/
+# Camille GUINAUDEAU
+#
 # --- UPDATE THIS SECTION AS REQUIRED ---
 
 # Name of your TV series pluing in CamelCase
@@ -42,12 +43,12 @@ AUTHOR_NAME = 'Camille Guinaudeau'
 AUTHOR_EMAIL = 'guinaudeau@limsi.fr'
 
 # TVD compatibility version
-REQUIRES_TVD = 'tvd>=0.6.1'
+REQUIRES_TVD = 'tvd >= 0.9.4'
 
 # Additional package dependency
 REQUIRES_OTHER = [
-    'beautifulsoup4>=4.3.2',
-    'pyannote.parser >= 0.0.2'
+    'beautifulsoup4 >= 4.3.2',
+    'pyannote.parser >= 0.4'
 ]
 
 # --- DO NOT MODIFY ANYTHING AFTER THIS LINE ---
@@ -87,6 +88,18 @@ setup(
     },
     include_package_data=True,
     install_requires=[REQUIRES_TVD] + REQUIRES_OTHER,
+    classifiers=[
+        "Development Status :: 4 - Beta",
+        "Intended Audience :: Science/Research",
+        "License :: OSI Approved :: MIT License",
+        "Natural Language :: English",
+        "Programming Language :: Python :: 2",
+        "Programming Language :: Python :: 2.7",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.4",
+        "Programming Language :: Python :: 3.5",
+        "Topic :: Scientific/Engineering"
+    ],
     entry_points="""
         [tvd.series]
         {name}={name}:{name}

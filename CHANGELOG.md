@@ -1,3 +1,7 @@
+### Version 0.6 (2015-10-29)
+
+  - feat: Python 3 support
+
 ### Version 0.5.2 (2014-07-22)
 
   - fix: add missing resource files
@@ -27,4 +31,3 @@
 ### Version 0.2 (2014-04-07)
 
   - first public release
-
