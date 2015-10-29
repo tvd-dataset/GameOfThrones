@@ -4,9 +4,7 @@
 #
 # The MIT License (MIT)
 #
-# Copyright (c) 2013-2014 CNRS
-# - Camille GUINAUDEAU
-# - Hervé BREDIN (http://herve.niderb.fr/)
+# Copyright (c) 2013-2015 CNRS
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -26,6 +24,13 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 #
+# AUTHORS
+# Hervé BREDIN -- http://herve.niderb.fr/
+# Camille GUINAUDEAU
+#
+
+from __future__ import unicode_literals
+from __future__ import print_function
 
 import re
 from pkg_resources import resource_filename
@@ -34,7 +39,7 @@ from bs4 import BeautifulSoup
 from tvd import Plugin
 from tvd import T, TStart, TEnd, Transcription
 from tvd import Segment, Annotation
-from pyannote.parser.ctm import CTMParser, IterLinesMixin
+from pyannote.parser.transcription.ctm import CTMParser, IterLinesMixin
 
 
 class GameOfThrones(Plugin, IterLinesMixin):
@@ -265,7 +270,7 @@ class GameOfThrones(Plugin, IterLinesMixin):
 
     def transcript_aligned(self, url=None, episode=None, **kwargs):
         path = resource_filename(self.__class__.__name__, url)
-        return CTMParser().get_transcription(path)
+        return CTMParser().read(path)()
 
 
     # def summary(self, url=None, episode=None, **kwargs):
