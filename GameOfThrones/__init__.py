@@ -44,6 +44,24 @@ from pyannote.parser.transcription.ctm import CTMParser, IterLinesMixin
 
 class GameOfThrones(Plugin, IterLinesMixin):
 
+    def speaker(self, url=None, episode=None, **kwargs):
+
+        # absolute path to resource file
+        path = resource_filename(self.__class__.__name__, url)
+
+        annotation = Annotation()
+        with open(path, 'r') as fp:
+            for line in fp:
+                tokens = fp.strip().split()
+                start_time = float(tokens[0])
+                duration = float(tokens[1])
+                segment = Segment(start_time, start_time + duration)
+                speaker = tokens[2]
+                annotation[segment, speaker] = speaker
+
+        return annotation
+
+
     def outline_www(self, url=None, episode=None, **kwargs):
         """
         Parameters
@@ -273,63 +291,6 @@ class GameOfThrones(Plugin, IterLinesMixin):
         return CTMParser().read(path)()
 
 
-    # def summary(self, url=None, episode=None, **kwargs):
-    #     """
-    #     Parameters
-    #     ----------
-    #     url : str, optional
-    #         URL where resource is available
-    #     episode : Episode, optional
-    #         Episode for which resource should be downloaded
-    #         Useful in case a same URL contains resources
-    #         for multiple episodes.
-    #
-    #     Returns
-    #     -------
-    #     G : Transcription
-    #     """
-    #
-    #     r = self.download_as_utf8(url)
-    #     soup = BeautifulSoup(r)
-    #
-    #     G = Transcription(episode=episode)
-    #     t1 = TStart
-    #     t2 = T()
-    #     G.add_edge(t1, t2)
-    #     t5 = T()
-    #
-    #     sp = ""
-    #     scene_location = ""
-    #
-    #     h3 = soup.find_all('h3')
-    #     summary_tag = h3[1]
-    #     ok = 1
-    #     end = 0
-    #
-    #     for element in summary_tag.next_elements:
-    #         if element.name == "h4" and ok == 1:
-    #             if end == 1:
-    #                 t3 = T()
-    #                 G.add_edge(t2, t3, location=scene_location, summary=sp)
-    #                 sp = ""
-    #             end = 1
-    #             scene_location = element.contents[0].text
-    #         if element.name == "p" and ok == 1:
-    #             sp = sp + " " + element.text
-    #         if element.name == "h3":
-    #             if ok == 1:
-    #                 t3 = T()
-    #                 G.add_edge(t2, t3)
-    #                 t4 = T()
-    #                 G.add_edge(t3, t4, location=scene_location, summary=sp)
-    #                 G.add_edge(t4, t5)
-    #             ok = 0
-    #
-    #     # add /empty/ edge between previous annotation and episode end
-    #     t6 = TEnd
-    #     G.add_edge(t5, t6)
-    #
-    #     return G
 
 from ._version import get_versions
 __version__ = get_versions()['version']
