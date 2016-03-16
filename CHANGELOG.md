@@ -1,3 +1,7 @@
+### Version 0.7 (2016-03-16)
+
+  - feat: who speaks when
+  
 ### Version 0.6 (2015-10-29)
 
   - feat: Python 3 support

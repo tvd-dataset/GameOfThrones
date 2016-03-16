@@ -40,6 +40,25 @@ episodes: [10, 10, 10]
 
 resources:
 
+    speaker:
+
+      type: annotation
+
+      description: >
+          Who speaks when (via automatic alignment of transcripts)
+
+      url:
+          - {season: 1, episode: 1, url: 'data/transcript/GameOfThrones.Season01.Episode01.out'}
+          - {season: 1, episode: 2, url: 'data/transcript/GameOfThrones.Season01.Episode02.out'}
+          - {season: 1, episode: 3, url: 'data/transcript/GameOfThrones.Season01.Episode03.out'}
+          - {season: 1, episode: 4, url: 'data/transcript/GameOfThrones.Season01.Episode04.out'}
+          - {season: 1, episode: 5, url: 'data/transcript/GameOfThrones.Season01.Episode05.out'}
+          - {season: 1, episode: 6, url: 'data/transcript/GameOfThrones.Season01.Episode06.out'}
+          - {season: 1, episode: 7, url: 'data/transcript/GameOfThrones.Season01.Episode07.out'}
+          - {season: 1, episode: 8, url: 'data/transcript/GameOfThrones.Season01.Episode08.out'}
+          - {season: 1, episode: 9, url: 'data/transcript/GameOfThrones.Season01.Episode09.out'}
+          - {season: 1, episode: 10, url: 'data/transcript/GameOfThrones.Season01.Episode10.out'}
+
     outline_www:
 
         type: transcription
