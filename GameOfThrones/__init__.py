@@ -52,7 +52,7 @@ class GameOfThrones(Plugin, IterLinesMixin):
         annotation = Annotation()
         with open(path, 'r') as fp:
             for line in fp:
-                tokens = fp.strip().split()
+                tokens = line.strip().split()
                 start_time = float(tokens[0])
                 duration = float(tokens[1])
                 segment = Segment(start_time, start_time + duration)
