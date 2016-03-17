@@ -42,6 +42,9 @@ SERIES_NAME = 'GameOfThrones'
 AUTHOR_NAME = 'Camille Guinaudeau'
 AUTHOR_EMAIL = 'guinaudeau@limsi.fr'
 
+MAINTAINER_NAME = 'Herve Bredin'
+MAINTAINER_EMAIL = 'bredin+tvd@limsi.fr'
+
 # TVD compatibility version
 REQUIRES_TVD = 'tvd >= 0.9.4'
 
@@ -82,8 +85,7 @@ setup(
             'data/mapping.txt',
             'data/scenes/mdoumbia/*',
             'data/scenes/outline/*',
-            'data/transcript/raw/*',
-            'data/transcript/ctm/*',
+            'data/transcript/*',
         ]
     },
     include_package_data=True,
