@@ -45,7 +45,7 @@ resources:
       type: annotation
 
       description: >
-          Who speaks when (via automatic alignment of transcripts)
+          Who speaks when (via automatic alignment of manual transcripts)
 
       url:
           - {season: 1, episode: 1, url: 'data/transcript/GameOfThrones.Season01.Episode01.out'}
