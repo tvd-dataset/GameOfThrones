@@ -1,4 +1,4 @@
-### Version 0.7.3 (2016-03-29)
+### Version 0.7.4 (2016-03-29)
 
   - feat: who speaks when
 
