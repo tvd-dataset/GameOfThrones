@@ -86,6 +86,8 @@ setup(
             'data/scenes/mdoumbia/*',
             'data/scenes/outline/*',
             'data/transcript/*',
+            'data/transcript/raw/*',
+            'data/transcript/ctm/*',
         ]
     },
     include_package_data=True,
